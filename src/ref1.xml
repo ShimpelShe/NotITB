@@ -1,0 +1,70 @@
+<ActorFrame>
+    <children>
+
+        <Layer
+            Type="Quad"
+            InitCommand="hidden,1;sleep,9999"
+        />
+
+        <!-- You will add elements there -->
+
+        <!--Layer
+            Type="Quad"
+            InitCommand="%function(self)
+                GAMESTATE:ApplyGameCommand('Mod,*3 25px MoveX0', 1);
+            end"
+        /-->
+
+        <Layer
+            Type="Quad"
+            InitCommand="%function(self) self:queuecommand('WaitForBeat') end"
+
+            WaitForBeatCommand="%function(self)
+                local beat = GAMESTATE:GetSongBeat()
+                if beat >= 68 then
+                    self:queuecommand('InitiateSide2Side')    
+                else
+                    self:sleep(0.01)
+                    self:queuecommand('WaitForBeat')
+                    self:queuecommand('Center')
+                end
+            end"
+
+            InitiateSide2SideCommand="%function(self)
+                self:queuecommand('MoveRight')
+                self:sleep(0.05)
+                self:queuecommand('Center')
+            end"
+
+            CenterCommand="%function(self)
+                for pn = 1, 2 do
+                    GAMESTATE:ApplyGameCommand('mod,*2 0% MoveX, *1 0% skewx')
+                end
+            end"
+
+            MoveRightCommand="%function(self)
+                for pn = 1, 2 do
+                    GAMESTATE:ApplyGameCommand('mod,*500 25% MoveX, *500 -15% skewx', pn)
+                end
+                self:sleep(0.35) -- Waits 1* beat (150 BPM)
+                self:queuecommand('MoveLeft')
+                self:sleep(0.05)
+                self:queuecommand('Center')
+            end"
+
+            MoveLeftCommand="%function(self)
+                for pn = 1, 2 do
+                    GAMESTATE:ApplyGameCommand('mod,*500 -25% MoveX, *500 15% skewx', pn)
+                end
+                self:sleep(0.35) -- Waits 1* beat (150 BPM)
+                self:queuecommand('MoveRight')
+                self:sleep(0.05)
+                self:queuecommand('Center')
+            end"
+        />
+
+
+
+
+    </children>
+</ActorFrame>

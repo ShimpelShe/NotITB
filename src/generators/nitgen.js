@@ -56,11 +56,13 @@ nitgGenerator.forBlock['object'] = function(block, generator) {
   return [code, Order.ATOMIC];
 };
 
+// this "scrub_" thing has been messing my shit with commas (Fixed)
+
 nitgGenerator.scrub_ = function(block, code, thisOnly) {
   const nextBlock =
       block.nextConnection && block.nextConnection.targetBlock();
   if (nextBlock && !thisOnly) {
-    return code + ',\n' + nitgGenerator.blockToCode(nextBlock);
+    return code + '\n' + nitgGenerator.blockToCode(nextBlock);
   }
   return code;
 };
@@ -70,7 +72,7 @@ nitgGenerator.scrub_ = function(block, code, thisOnly) {
 nitgGenerator.forBlock['ActorFrame'] = function(block, generator) {
   const statement_actorframe = generator.statementToCode(block, 'ACTORFRAME');
 
-  const code = '<ActorFrame><children>\n' + statement_actorframe + '\n</ActorFrame></children>';
+  const code = '<ActorFrame><children>\n' + statement_actorframe + '\n</children></ActorFrame>';
   return code;
 };
 
@@ -84,7 +86,7 @@ nitgGenerator.forBlock['Layer'] = function(block, generator) {
 nitgGenerator.forBlock['ActorType'] = function(block, generator) {
   const text_actortype = block.getFieldValue('ACTORTYPE');
   
-  const code = 'Type=' + text_actortype;
+  const code = 'Type="' + text_actortype + '"';
   return code;
 };
 
@@ -92,6 +94,53 @@ nitgGenerator.forBlock['Command'] = function(block, generator) {
   const text_cmdname = block.getFieldValue('CMDNAME');
   const statement_cmd = generator.statementToCode(block, 'Command');
 
-  const code = text_cmdname + 'Command="\n' + statement_cmd + '\n"';
+  const code = text_cmdname + 'Command="' + statement_cmd + '"';
+  return code;
+};
+
+nitgGenerator.forBlock['Function'] = function(block, generator) {
+  const text_function = block.getFieldValue('FUNCTION');
+  const statement_func = generator.statementToCode(block, 'FUNC');
+
+  const code = '%function(' + text_function + ')\n' + statement_func + '\nend';
+  return code;
+};
+
+nitgGenerator.forBlock['IFDO'] = function(block, generator) {
+  const value_if = generator.valueToCode(block, 'IF', Order.ATOMIC);
+  const statement_do = generator.statementToCode(block, 'DO');
+
+  const code = 'if ' + value_if + ' then\n' + statement_do + '\nend';
+  return code;
+};
+
+nitgGenerator.forBlock['IFDOELSE'] = function(block, generator) {
+  const value_if = generator.valueToCode(block, 'IF', Order.ATOMIC);
+  const statement_do = generator.statementToCode(block, 'DO');
+  const statement_else = generator.statementToCode(block, 'ELSE');
+
+  const code = 'if ' + value_if + ' then\n' + statement_do + '\nelse\n' + statement_else + '\nend';
+  return code;
+};
+
+nitgGenerator.forBlock['Generic_Custom'] = function(block, generator) {
+  const text_custom = block.getFieldValue('CUSTOM');
+
+  const code = text_custom;
+  return [code, Order.ATOMIC];
+};
+
+nitgGenerator.forBlock['Generic_CodeCustom'] = function(block, generator) {
+  const text_custom = block.getFieldValue('CUSTOM');
+
+  const code = text_custom;
+  return code;
+};
+
+nitgGenerator.forBlock['VARSET'] = function(block, generator) {
+  const text_var = block.getFieldValue('VAR');
+  const value_varset = generator.valueToCode(block, 'VARSET', Order.ATOMIC);
+
+  const code = 'local ' + text_var + ' = ' + value_varset;
   return code;
 }

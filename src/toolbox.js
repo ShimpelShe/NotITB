@@ -48,6 +48,7 @@ export const toolbox = {
       'kind': 'block',
       'type': 'lists_create_with'
 	}]},
+  // Here are the custom blocks
 	{
 	'kind': 'category',
 	'name': 'NotITG',
@@ -68,6 +69,31 @@ export const toolbox = {
 	{
       'kind': 'block',
       'type': 'Command'
-    }]}
+    },
+    {
+      'kind': 'block',
+      'type': 'Function'
+    },
+    {
+      'kind': 'block',
+      'type': 'IFDO'
+    },
+    {
+      'kind': 'block',
+      'type': 'IFDOELSE'
+    },
+    {
+      'kind': 'block',
+      'type': 'Generic_Custom'
+    },
+    {
+      'kind': 'block',
+      'type': 'Generic_CodeCustom'
+    },
+    {
+      'kind': 'block',
+      'type': 'VARSET'
+    },
+  ]}
   ]
 };
