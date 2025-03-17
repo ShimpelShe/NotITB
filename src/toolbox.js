@@ -94,6 +94,10 @@ export const toolbox = {
       'kind': 'block',
       'type': 'VARSET'
     },
+    {
+      'kind': 'block',
+      'type': 'GameState'
+    },
   ]}
   ]
 };

@@ -229,8 +229,22 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
   "type": "VARSET",
   "tooltip": "",
   "helpUrl": "",
-  "message0": "Local %1 : %2",
+  "message0": "Variable %1 %2 : %3",
   "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "VARTYPE",
+      "options": [
+        [
+          "Global",
+          "VAR"
+        ],
+        [
+          "Local",
+          "LOCAL"
+        ]
+      ]
+    },
     {
       "type": "field_input",
       "name": "VAR",
@@ -244,5 +258,19 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
   "previousStatement": null,
   "nextStatement": null,
   "colour": 225
+},
+{
+  "type": "GameState",
+  "tooltip": "",
+  "helpUrl": "",
+  "message0": "Gamestate: %1",
+  "args0": [
+    {
+      "type": "input_value",
+      "name": "GAMESTATE"
+    }
+  ],
+  "output": null,
+  "colour": 180
 }
 ]);

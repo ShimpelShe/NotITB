@@ -138,9 +138,19 @@ nitgGenerator.forBlock['Generic_CodeCustom'] = function(block, generator) {
 };
 
 nitgGenerator.forBlock['VARSET'] = function(block, generator) {
+  const dropdown_vartype = block.getFieldValue('VARTYPE');
   const text_var = block.getFieldValue('VAR');
+  // TODO: change Order.ATOMIC to the correct operator precedence strength
   const value_varset = generator.valueToCode(block, 'VARSET', Order.ATOMIC);
 
-  const code = 'local ' + text_var + ' = ' + value_varset;
+  const code = dropdown_vartype + ' ' + text_var + ' = ' + value_varset;
   return code;
+};
+
+nitgGenerator.forBlock['GameState'] = function(block, generator) {
+  // TODO: change Order.ATOMIC to the correct operator precedence strength
+  const value_gamestate = generator.valueToCode(block, 'GAMESTATE', Order.ATOMIC);
+
+  const code = 'GAMESTATE:' + value_gamestate;
+  return [code, Order.ATOMIC];
 }
