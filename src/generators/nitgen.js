@@ -233,6 +233,6 @@ nitgGenerator.forBlock['Mod'] = function(block, generator) {
 
   const value_arguments = generator.valueToCode(block, 'ARGUMENTS', Order.ATOMIC);
 
-  const code = '*' + number_speed + ' ' + number_amp + ' ' + text_mod + ',';
+  const code = '*' + number_speed + ' ' + number_amp + ' ' + text_mod + ',' + value_arguments;
   return [code, Order.ATOMIC];
 }
