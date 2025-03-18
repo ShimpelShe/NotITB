@@ -188,18 +188,6 @@ nitgGenerator.forBlock['Equality'] = function(block, generator) {
   return [code, Order.ATOMIC];
 };
 
-nitgGenerator.forBlock['MoveArrow'] = function(block, generator) {
-  const dropdown_type = block.getFieldValue('Type');
-
-  const dropdown_num = block.getFieldValue('Num');
-
-  const number_spd = block.getFieldValue('Spd');
-  const number_amp = block.getFieldValue('Amp');
-
-  const code = "ApplyGameCommand('Mod,*" + number_spd + " " + number_amp + " " + dropdown_type + dropdown_num + "')";
-  return [code, Order.ATOMIC];
-};
-
 nitgGenerator.forBlock['SELF'] = function(block, generator) {
   const value_self = generator.valueToCode(block, 'SELF', Order.ATOMIC);
 

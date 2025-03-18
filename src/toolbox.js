@@ -17,41 +17,7 @@ export const toolbox = {
   'contents': [
 	{
 	'kind': 'category',
-	'name': 'UNUSED',
-	'colour': '0',
-	'contents': [
-    {
-      'kind': 'block',
-      'type': 'object'
-    },
-    {
-      'kind': 'block',
-      'type': 'member'
-    },
-    {
-      'kind': 'block',
-      'type': 'math_number'
-    },
-    {
-      'kind': 'block',
-      'type': 'text'
-    },
-    {
-      'kind': 'block',
-      'type': 'logic_boolean'
-    },
-    {
-      'kind': 'block',
-      'type': 'logic_null'
-    },
-    {
-      'kind': 'block',
-      'type': 'lists_create_with'
-	}]},
-  // Here are the custom blocks
-	{
-	'kind': 'category',
-	'name': 'NotITG',
+	'name': 'Layout',
 	'colour': '210',
 	'contents': [
 	{
@@ -74,6 +40,13 @@ export const toolbox = {
       'kind': 'block',
       'type': 'Function'
     },
+  ]
+},
+{
+	'kind': 'category',
+	'name': 'Flow',
+	'colour': '60',
+	'contents': [
     {
       'kind': 'block',
       'type': 'IFDO'
@@ -84,11 +57,22 @@ export const toolbox = {
     },
     {
       'kind': 'block',
-      'type': 'Generic_Custom'
+      'type': 'Equality'
     },
     {
       'kind': 'block',
-      'type': 'Generic_CodeCustom'
+      'type': 'JoinBlock'
+    },
+  ]
+},
+{
+	'kind': 'category',
+	'name': 'Actor CMDs',
+	'colour': '180',
+	'contents': [
+    {
+      'kind': 'block',
+      'type': 'DO'
     },
     {
       'kind': 'block',
@@ -100,31 +84,7 @@ export const toolbox = {
     },
     {
       'kind': 'block',
-      'type': 'JoinBlock'
-    },
-    {
-      'kind': 'block',
-      'type': 'DO'
-    },
-    {
-      'kind': 'block',
-      'type': 'Equality'
-    },
-    {
-      'kind': 'block',
-      'type': 'MoveArrow'
-    },
-    {
-      'kind': 'block',
       'type': 'SELF'
-    },
-    {
-      'kind': 'block',
-      'type': 'playCommand'
-    },
-    {
-      'kind': 'block',
-      'type': 'sleep'
     },
     {
       'kind': 'block',
@@ -134,6 +94,30 @@ export const toolbox = {
       'kind': 'block',
       'type': 'Mod'
     },
-  ]}
+    {
+      'kind': 'block',
+      'type': 'sleep'
+    },
+    {
+      'kind': 'block',
+      'type': 'playCommand'
+    },
+  ]
+},
+{
+  'kind': 'category',
+  'name': 'User Custom',
+  'colour': '0',
+  'contents': [
+    {
+      'kind': 'block',
+      'type': 'Generic_Custom'
+    },
+    {
+      'kind': 'block',
+      'type': 'Generic_CodeCustom'
+    },
+  ]
+}
   ]
 };

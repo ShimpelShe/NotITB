@@ -140,7 +140,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
   ],
   "previousStatement": null,
   "nextStatement": null,
-  "colour": 150
+  "colour": 320
 },
 {
   "type": "IFDO",
@@ -159,7 +159,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
   ],
   "previousStatement": null,
   "nextStatement": null,
-  "colour": 30
+  "colour": 60
 },
 {
   "type": "IFDOELSE",
@@ -182,7 +182,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
   ],
   "previousStatement": null,
   "nextStatement": null,
-  "colour": 30
+  "colour": 60
 },
 {
   "type": "Generic_Custom",
@@ -257,7 +257,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
   ],
   "previousStatement": null,
   "nextStatement": null,
-  "colour": 225
+  "colour": 180
 },
 {
   "type": "GameState",
@@ -298,7 +298,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
     }
   ],
   "output": null,
-  "colour": 30,
+  "colour": 60,
   "inputsInline": true
 },
 {
@@ -314,7 +314,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
   ],
   "previousStatement": null,
   "nextStatement": null,
-  "colour": 0
+  "colour": 180
 },
 {
   "type": "Equality",
@@ -368,131 +368,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
     }
   ],
   "output": null,
-  "colour": 30
-},
-{
-  "type": "MoveArrow",
-  "tooltip": "Put after a Gamestate connector to move an arrow",
-  "helpUrl": "",
-  "message0": "Mod %1 %2 Arrow %3 Speed %4 Magnitude %5 %6",
-  "args0": [
-    {
-      "type": "field_dropdown",
-      "name": "Type",
-      "options": [
-        [
-          "Move X",
-          "movex"
-        ],
-        [
-          "Move Y",
-          "movey"
-        ],
-        [
-          "Move Z",
-          "movez"
-        ],
-        [
-          "Rotate X",
-          "rotationx"
-        ],
-        [
-          "Rotate Y",
-          "rotationy"
-        ],
-        [
-          "Rotate Z",
-          "rotationz"
-        ],
-        [
-          "Zoom X",
-          "zoomx"
-        ],
-        [
-          "Zoom Y",
-          "zoomy"
-        ],
-        [
-          "Zoom Z",
-          "zoomz"
-        ],
-        [
-          "Skew X",
-          "skewx"
-        ],
-        [
-          "Skew Y",
-          "skewy"
-        ]
-      ]
-    },
-
-    {
-      "type": "input_end_row",
-      "name": "Label",
-      "align": "CENTRE"
-    },
-    {
-      "type": "field_dropdown",
-      "name": "Num",
-      "options": [
-        [
-          "Arrow 1",
-          "0"
-        ],
-        [
-          "Arrow 2",
-          "1"
-        ],
-        [
-          "Arrow 3",
-          "2"
-        ],
-        [
-          "Arrow 4",
-          "3"
-        ],
-        [
-          "Arrow 5",
-          "4"
-        ],
-        [
-          "Arrow 6",
-          "5"
-        ],
-        [
-          "Arrow 7",
-          "6"
-        ],
-        [
-          "Arrow 8",
-          "7"
-        ],
-        [
-          "All",
-          ""
-        ]
-      ]
-
-    },
-    {
-      "type": "field_number",
-      "name": "Spd",
-      "value": 1
-    },
-    {
-      "type": "field_number",
-      "name": "Amp",
-      "value": 50
-    },
-    {
-      "type": "input_end_row",
-      "name": "Params",
-      "align": "CENTRE"
-    }
-  ],
-  "output": null,
-  "colour": 0
+  "colour": 60
 },
 {
   "type": "SELF",
@@ -539,7 +415,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
     }
   ],
   "output": null,
-  "colour": 0
+  "colour": 225
 },
 {
   "type": "sleep",
@@ -624,6 +500,6 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
     }
   ],
   "output": null,
-  "colour": 90
+  "colour": 0
 }
 ]);
