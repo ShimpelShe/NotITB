@@ -114,6 +114,26 @@ export const toolbox = {
       'kind': 'block',
       'type': 'MoveArrow'
     },
+    {
+      'kind': 'block',
+      'type': 'SELF'
+    },
+    {
+      'kind': 'block',
+      'type': 'playCommand'
+    },
+    {
+      'kind': 'block',
+      'type': 'sleep'
+    },
+    {
+      'kind': 'block',
+      'type': 'ApplyModifiers'
+    },
+    {
+      'kind': 'block',
+      'type': 'Mod'
+    },
   ]}
   ]
 };

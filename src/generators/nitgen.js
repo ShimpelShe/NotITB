@@ -190,24 +190,61 @@ nitgGenerator.forBlock['Equality'] = function(block, generator) {
 
 nitgGenerator.forBlock['MoveArrow'] = function(block, generator) {
   const dropdown_type = block.getFieldValue('Type');
-  const dropdown_plyr = block.getFieldValue('Plyr');
 
-  const number_num = block.getFieldValue('Num');
+  const dropdown_num = block.getFieldValue('Num');
+
   const number_spd = block.getFieldValue('Spd');
   const number_amp = block.getFieldValue('Amp');
 
-  if (dropdown_plyr === '1') {
-    var player = ', 1)';
+  const code = "ApplyGameCommand('Mod,*" + number_spd + " " + number_amp + " " + dropdown_type + dropdown_num + "')";
+  return [code, Order.ATOMIC];
+};
+
+nitgGenerator.forBlock['SELF'] = function(block, generator) {
+  const value_self = generator.valueToCode(block, 'SELF', Order.ATOMIC);
+
+  const code = 'self:' + value_self;
+  return [code, Order.ATOMIC];
+};
+
+nitgGenerator.forBlock['playCommand'] = function(block, generator) {
+  const dropdown_mode = block.getFieldValue('MODE');
+  const text_cmd = block.getFieldValue('CMD');
+
+  const code = dropdown_mode + "command('" + text_cmd + "')";
+  return [code, Order.ATOMIC];
+};
+
+nitgGenerator.forBlock['sleep'] = function(block, generator) {
+  const number_time = block.getFieldValue('TIME');
+
+  const code = 'sleep(' + number_time + ')';
+  return [code, Order.ATOMIC];
+};
+
+nitgGenerator.forBlock['ApplyModifiers'] = function(block, generator) {
+  const value_mods = generator.valueToCode(block, 'MODS', Order.ATOMIC);
+  const dropdown_player = block.getFieldValue('PLAYER');
+
+  if (dropdown_player === '-') {
+    var aplmodplayer = '';
+  } else if (dropdown_player === '1') {
+    var aplmodplayer = ' 1';
+  } else if (dropdown_player === '2') {
+    var aplmodplayer = ' 2';
   }
 
-  if (dropdown_plyr === '2') {
-    var player = ', 2)';
-  }
+  const code = "ApplyModifiers('" + value_mods + "'," + aplmodplayer + ")";
+  return [code, Order.ATOMIC];
+}
 
-  if (dropdown_plyr === 'B') {
-    var player = ')';
-  }
+nitgGenerator.forBlock['Mod'] = function(block, generator) {
+  const text_mod = block.getFieldValue('MOD');
+  const number_speed = block.getFieldValue('SPEED');
+  const number_amp = block.getFieldValue('AMP');
 
-  const code = "ApplyGameCommand('Mod,*" + number_spd + " " + number_amp + " " + dropdown_type + number_num + "'" + player;
+  const value_arguments = generator.valueToCode(block, 'ARGUMENTS', Order.ATOMIC);
+
+  const code = '*' + number_speed + ' ' + number_amp + ' ' + text_mod + ',';
   return [code, Order.ATOMIC];
 }

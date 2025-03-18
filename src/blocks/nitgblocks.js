@@ -374,7 +374,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
   "type": "MoveArrow",
   "tooltip": "Put after a Gamestate connector to move an arrow",
   "helpUrl": "",
-  "message0": "Arrow %1 Player %2 %3 Arrow %4 Speed %5 Magnitude %6 %7",
+  "message0": "Mod %1 %2 Arrow %3 Speed %4 Magnitude %5 %6",
   "args0": [
     {
       "type": "field_dropdown",
@@ -426,36 +426,54 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
         ]
       ]
     },
-    {
-      "type": "field_dropdown",
-      "name": "Plyr",
-      "options": [
-        [
-          "Both",
-          "B"
-        ],
-        [
-          "Player 1",
-          "1"
-        ],
-        [
-          "Player 2",
-          "2"
-        ]
-      ]
-    },
+
     {
       "type": "input_end_row",
       "name": "Label",
       "align": "CENTRE"
     },
     {
-      "type": "field_number",
+      "type": "field_dropdown",
       "name": "Num",
-      "value": 0,
-      "min": 0,
-      "max": 7,
-      "precision": 1
+      "options": [
+        [
+          "Arrow 1",
+          "0"
+        ],
+        [
+          "Arrow 2",
+          "1"
+        ],
+        [
+          "Arrow 3",
+          "2"
+        ],
+        [
+          "Arrow 4",
+          "3"
+        ],
+        [
+          "Arrow 5",
+          "4"
+        ],
+        [
+          "Arrow 6",
+          "5"
+        ],
+        [
+          "Arrow 7",
+          "6"
+        ],
+        [
+          "Arrow 8",
+          "7"
+        ],
+        [
+          "All",
+          ""
+        ]
+      ]
+
     },
     {
       "type": "field_number",
@@ -475,5 +493,137 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
   ],
   "output": null,
   "colour": 0
+},
+{
+  "type": "SELF",
+  "tooltip": "",
+  "helpUrl": "",
+  "message0": "Self: %1",
+  "args0": [
+    {
+      "type": "input_value",
+      "name": "SELF"
+    }
+  ],
+  "output": null,
+  "colour": 180
+},
+{
+  "type": "playCommand",
+  "tooltip": "",
+  "helpUrl": "",
+  "message0": "%1 command %2 %3",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "MODE",
+      "options": [
+        [
+          "Queue",
+          "queue"
+        ],
+        [
+          "Play",
+          "play"
+        ]
+      ]
+    },
+    {
+      "type": "field_input",
+      "name": "CMD",
+      "text": "Some"
+    },
+    {
+      "type": "input_end_row",
+      "name": "NAME"
+    }
+  ],
+  "output": null,
+  "colour": 0
+},
+{
+  "type": "sleep",
+  "tooltip": "",
+  "helpUrl": "",
+  "message0": "Sleep %1 %2",
+  "args0": [
+    {
+      "type": "field_number",
+      "name": "TIME",
+      "value": 1
+    },
+    {
+      "type": "input_end_row",
+      "name": "SLEEP"
+    }
+  ],
+  "output": null,
+  "colour": 225
+},
+{
+  "type": "ApplyModifiers",
+  "tooltip": "",
+  "helpUrl": "",
+  "message0": "Apply Modifiers: %1 To Player: %2 %3",
+  "args0": [
+    {
+      "type": "input_value",
+      "name": "MODS"
+    },
+    {
+      "type": "field_dropdown",
+      "name": "PLAYER",
+      "options": [
+        [
+          "Both",
+          "-"
+        ],
+        [
+          "Player 1",
+          "1"
+        ],
+        [
+          "Player 2",
+          "2"
+        ]
+      ]
+    },
+    {
+      "type": "input_end_row",
+      "name": "PLYR"
+    }
+  ],
+  "output": null,
+  "colour": 0,
+  "inputsInline": true
+},
+{
+  "type": "Mod",
+  "tooltip": "",
+  "helpUrl": "",
+  "message0": "Mod %1 Speed %2 Amplitude %3 %4",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "MOD",
+      "text": "Drunk"
+    },
+    {
+      "type": "field_number",
+      "name": "SPEED",
+      "value": 3
+    },
+    {
+      "type": "field_number",
+      "name": "AMP",
+      "value": 100
+    },
+    {
+      "type": "input_value",
+      "name": "ARGUMENTS"
+    }
+  ],
+  "output": null,
+  "colour": 90
 }
 ]);
