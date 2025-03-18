@@ -217,12 +217,12 @@ nitgGenerator.forBlock['ApplyModifiers'] = function(block, generator) {
   if (dropdown_player === '-') {
     var aplmodplayer = '';
   } else if (dropdown_player === '1') {
-    var aplmodplayer = ' 1';
+    var aplmodplayer = ', 1';
   } else if (dropdown_player === '2') {
-    var aplmodplayer = ' 2';
+    var aplmodplayer = ', 2';
   }
 
-  const code = "ApplyModifiers('" + value_mods + "'," + aplmodplayer + ")";
+  const code = "ApplyModifiers('" + value_mods + "'" + aplmodplayer + ")";
   return [code, Order.ATOMIC];
 }
 
