@@ -102,6 +102,18 @@ export const toolbox = {
       'kind': 'block',
       'type': 'JoinBlock'
     },
+    {
+      'kind': 'block',
+      'type': 'DO'
+    },
+    {
+      'kind': 'block',
+      'type': 'Equality'
+    },
+    {
+      'kind': 'block',
+      'type': 'MoveArrow'
+    },
   ]}
   ]
 };

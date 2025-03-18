@@ -171,4 +171,43 @@ nitgGenerator.forBlock['JoinBlock'] = function(block, generator) {
 
   const code = value_join + endval_with;
   return [code, Order.ATOMIC];
+};
+
+nitgGenerator.forBlock['DO'] = function(block, generator) {
+  const value_name = generator.valueToCode(block, 'NAME', Order.ATOMIC);
+  const code = value_name;
+  return code;
+};
+
+nitgGenerator.forBlock['Equality'] = function(block, generator) {
+  const text_arg1 = block.getFieldValue('Arg1');
+  const dropdown_sign = block.getFieldValue('Sign');
+  const text_arg2 = block.getFieldValue('Arg2');
+
+  const code = text_arg1 + ' ' + dropdown_sign + ' ' + text_arg2;
+  return [code, Order.ATOMIC];
+};
+
+nitgGenerator.forBlock['MoveArrow'] = function(block, generator) {
+  const dropdown_type = block.getFieldValue('Type');
+  const dropdown_plyr = block.getFieldValue('Plyr');
+
+  const number_num = block.getFieldValue('Num');
+  const number_spd = block.getFieldValue('Spd');
+  const number_amp = block.getFieldValue('Amp');
+
+  if (dropdown_plyr === '1') {
+    var player = ', 1)';
+  }
+
+  if (dropdown_plyr === '2') {
+    var player = ', 2)';
+  }
+
+  if (dropdown_plyr === 'B') {
+    var player = ')';
+  }
+
+  const code = "ApplyGameCommand('Mod,*" + number_spd + " " + number_amp + " " + dropdown_type + number_num + "'" + player;
+  return [code, Order.ATOMIC];
 }

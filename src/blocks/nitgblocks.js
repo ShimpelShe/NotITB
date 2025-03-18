@@ -300,5 +300,180 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
   "output": null,
   "colour": 30,
   "inputsInline": true
+},
+{
+  "type": "DO",
+  "tooltip": "",
+  "helpUrl": "",
+  "message0": "Do %1",
+  "args0": [
+    {
+      "type": "input_value",
+      "name": "NAME"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 0
+},
+{
+  "type": "Equality",
+  "tooltip": "",
+  "helpUrl": "",
+  "message0": "%1 %2 %3 %4",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "Arg1",
+      "text": "Value 1"
+    },
+    {
+      "type": "field_dropdown",
+      "name": "Sign",
+      "options": [
+        [
+          ">",
+          ">"
+        ],
+        [
+          ">=",
+          ">="
+        ],
+        [
+          "~=",
+          "~="
+        ],
+        [
+          "==",
+          "=="
+        ],
+        [
+          "<=",
+          "<="
+        ],
+        [
+          "<",
+          "<"
+        ]
+      ]
+    },
+    {
+      "type": "field_input",
+      "name": "Arg2",
+      "text": "Value 2"
+    },
+    {
+      "type": "input_dummy",
+      "name": "EqualityDo"
+    }
+  ],
+  "output": null,
+  "colour": 30
+},
+{
+  "type": "MoveArrow",
+  "tooltip": "Put after a Gamestate connector to move an arrow",
+  "helpUrl": "",
+  "message0": "Arrow %1 Player %2 %3 Arrow %4 Speed %5 Magnitude %6 %7",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "Type",
+      "options": [
+        [
+          "Move X",
+          "movex"
+        ],
+        [
+          "Move Y",
+          "movey"
+        ],
+        [
+          "Move Z",
+          "movez"
+        ],
+        [
+          "Rotate X",
+          "rotationx"
+        ],
+        [
+          "Rotate Y",
+          "rotationy"
+        ],
+        [
+          "Rotate Z",
+          "rotationz"
+        ],
+        [
+          "Zoom X",
+          "zoomx"
+        ],
+        [
+          "Zoom Y",
+          "zoomy"
+        ],
+        [
+          "Zoom Z",
+          "zoomz"
+        ],
+        [
+          "Skew X",
+          "skewx"
+        ],
+        [
+          "Skew Y",
+          "skewy"
+        ]
+      ]
+    },
+    {
+      "type": "field_dropdown",
+      "name": "Plyr",
+      "options": [
+        [
+          "Both",
+          "B"
+        ],
+        [
+          "Player 1",
+          "1"
+        ],
+        [
+          "Player 2",
+          "2"
+        ]
+      ]
+    },
+    {
+      "type": "input_end_row",
+      "name": "Label",
+      "align": "CENTRE"
+    },
+    {
+      "type": "field_number",
+      "name": "Num",
+      "value": 0,
+      "min": 0,
+      "max": 7,
+      "precision": 1
+    },
+    {
+      "type": "field_number",
+      "name": "Spd",
+      "value": 1
+    },
+    {
+      "type": "field_number",
+      "name": "Amp",
+      "value": 50
+    },
+    {
+      "type": "input_end_row",
+      "name": "Params",
+      "align": "CENTRE"
+    }
+  ],
+  "output": null,
+  "colour": 0
 }
 ]);

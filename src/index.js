@@ -25,7 +25,6 @@ const runCode = () => {
   const code = nitgGenerator.workspaceToCode(ws);
   codeDiv.innerText = code;
 };	
-
 // Load the initial state from storage and run the code.
 load(ws);
 runCode();
