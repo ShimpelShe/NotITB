@@ -237,11 +237,11 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
       "options": [
         [
           "Global",
-          "VAR"
+          "var"
         ],
         [
           "Local",
-          "LOCAL"
+          "local"
         ]
       ]
     },
@@ -272,5 +272,33 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
   ],
   "output": null,
   "colour": 180
+},
+{
+  "type": "JoinBlock",
+  "tooltip": "",
+  "helpUrl": "",
+  "message0": "Join %1 With %2 Space between? %3 %4",
+  "args0": [
+    {
+      "type": "input_value",
+      "name": "Join"
+    },
+    {
+      "type": "input_value",
+      "name": "With"
+    },
+    {
+      "type": "field_checkbox",
+      "name": "Space",
+      "checked": "FALSE"
+    },
+    {
+      "type": "input_dummy",
+      "name": "NAME"
+    }
+  ],
+  "output": null,
+  "colour": 30,
+  "inputsInline": true
 }
 ]);

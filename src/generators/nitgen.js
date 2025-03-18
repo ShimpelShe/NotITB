@@ -140,17 +140,35 @@ nitgGenerator.forBlock['Generic_CodeCustom'] = function(block, generator) {
 nitgGenerator.forBlock['VARSET'] = function(block, generator) {
   const dropdown_vartype = block.getFieldValue('VARTYPE');
   const text_var = block.getFieldValue('VAR');
-  // TODO: change Order.ATOMIC to the correct operator precedence strength
   const value_varset = generator.valueToCode(block, 'VARSET', Order.ATOMIC);
 
   const code = dropdown_vartype + ' ' + text_var + ' = ' + value_varset;
-  return code;
+  return code
 };
 
 nitgGenerator.forBlock['GameState'] = function(block, generator) {
-  // TODO: change Order.ATOMIC to the correct operator precedence strength
   const value_gamestate = generator.valueToCode(block, 'GAMESTATE', Order.ATOMIC);
 
   const code = 'GAMESTATE:' + value_gamestate;
+  return [code, Order.ATOMIC];
+};
+
+nitgGenerator.forBlock['JoinBlock'] = function(block, generator) {
+
+  const value_join = generator.valueToCode(block, 'Join', Order.ATOMIC);
+
+  const value_with = generator.valueToCode(block, 'With', Order.ATOMIC);
+
+  const checkbox_space = block.getFieldValue('Space');
+
+  if (checkbox_space === 'TRUE') {
+    var endval_with = ' ' + value_with;
+  }
+
+  if (checkbox_space === 'FALSE') {
+    var endval_with = value_with;
+  }
+
+  const code = value_join + endval_with;
   return [code, Order.ATOMIC];
 }

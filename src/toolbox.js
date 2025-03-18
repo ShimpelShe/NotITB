@@ -98,6 +98,10 @@ export const toolbox = {
       'kind': 'block',
       'type': 'GameState'
     },
+    {
+      'kind': 'block',
+      'type': 'JoinBlock'
+    },
   ]}
   ]
 };
