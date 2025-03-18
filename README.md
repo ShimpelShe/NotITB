@@ -14,4 +14,6 @@ I'm too lazy to write modcharts and besides there are others who don't know what
 Or perhaps there are other lazy people which don't wanna go through the hassle of writing a modfile. Which is.. to be expected
 
 ## How to NotITB?
-Just download source, extract it into any folder, enter it such that you're above /src, and then open terminal, and start it by typing in [npm start]. If there's anything like an uninstalled dependency, just search it online dude.
+Just download source, extract it into any folder, enter it such that you're above /src, and then open terminal, and start it by typing in [npm start].  
+  
+If there's anything like an uninstalled dependency, just search it online dude.
