@@ -32,7 +32,12 @@ code {
 
 #generatedCode {
   height: 50%;
-  background-color: rgb(247, 240, 228);
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  border-style: solid double double solid;
+  border-color: gray;
+  scrollbar-color: gray transparent;
 }
 
 #output {

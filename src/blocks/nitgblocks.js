@@ -257,7 +257,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
   ],
   "previousStatement": null,
   "nextStatement": null,
-  "colour": 180
+  "colour": 120
 },
 {
   "type": "GameState",
@@ -298,7 +298,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
     }
   ],
   "output": null,
-  "colour": 60,
+  "colour": 120,
   "inputsInline": true
 },
 {
@@ -317,7 +317,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
   "colour": 180
 },
 {
-  "type": "Equality",
+  "type": "Operation",
   "tooltip": "",
   "helpUrl": "",
   "message0": "%1 %2 %3 %4",
@@ -331,6 +331,34 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
       "type": "field_dropdown",
       "name": "Sign",
       "options": [
+        [
+          "+",
+          "+"
+        ],
+        [
+          "-",
+          "-"
+        ],
+        [
+          "/",
+          "/"
+        ],
+        [
+          "*",
+          "*"
+        ],
+        [
+          "^",
+          "^"
+        ],
+        [
+          "and",
+          "and"
+        ],
+        [
+          "not",
+          "not"
+        ],
         [
           ">",
           ">"
@@ -354,7 +382,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
         [
           "<",
           "<"
-        ]
+        ],
       ]
     },
     {
@@ -368,7 +396,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
     }
   ],
   "output": null,
-  "colour": 60
+  "colour": 120
 },
 {
   "type": "SELF",
@@ -501,5 +529,97 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
   ],
   "output": null,
   "colour": 0
+},
+{
+  "type": "forDo",
+  "tooltip": "",
+  "helpUrl": "",
+  "message0": "For %1 = %2 Do %3 %4",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "VAL",
+      "text": "Value"
+    },
+    {
+      "type": "field_input",
+      "name": "EXP",
+      "text": "1, 2, 3"
+    },
+    {
+      "type": "input_dummy",
+      "name": "For"
+    },
+    {
+      "type": "input_statement",
+      "name": "Do"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 60
+},
+{
+  "type": "repeatUntil",
+  "tooltip": "",
+  "helpUrl": "",
+  "message0": "Repeat until %1 %2",
+  "args0": [
+    {
+      "type": "input_value",
+      "name": "Label",
+      "check": "Boolean"
+    },
+    {
+      "type": "input_statement",
+      "name": "Repeat"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 60
+},
+{
+  "type": "whileDo",
+  "tooltip": "",
+  "helpUrl": "",
+  "message0": "While %1 Do %2 %3",
+  "args0": [
+    {
+      "type": "input_value",
+      "name": "While"
+    },
+    {
+      "type": "input_dummy",
+      "name": "While2"
+    },
+    {
+      "type": "input_statement",
+      "name": "Do"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 60
+},
+{
+  "type": "freeuse_text",
+  "tooltip": "",
+  "helpUrl": "",
+  "message0": "%1 %2",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "TXT",
+      "text": "Text"
+    },
+    {
+      "type": "input_value",
+      "name": "TEXT",
+      "align": "CENTRE"
+    }
+  ],
+  "output": null,
+  "colour": 120
 }
 ]);

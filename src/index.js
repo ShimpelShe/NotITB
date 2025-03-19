@@ -17,7 +17,22 @@ Blockly.common.defineBlocks(blocks);
 // Set up UI elements and inject Blockly
 const codeDiv = document.getElementById('generatedCode').firstChild;
 const blocklyDiv = document.getElementById('blocklyDiv');
-const ws = Blockly.inject(blocklyDiv, {toolbox});
+const ws = Blockly.inject(blocklyDiv, {toolbox,
+  grid:
+      {spacing: 20,
+       length: 3,
+       colour: '#ccc',
+       snap: true},
+  trashcan: true,
+  zoom:
+         {controls: true,
+          wheel: true,
+          startScale: 1.0,
+          maxScale: 3,
+          minScale: 0.3,
+          scaleSpeed: 1.2,
+          pinch: true},
+});
 
 // This function resets the code div and shows the
 // generated code from the workspace.

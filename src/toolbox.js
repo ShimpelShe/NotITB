@@ -57,13 +57,40 @@ export const toolbox = {
     },
     {
       'kind': 'block',
-      'type': 'Equality'
+      'type': 'forDo'
+    },
+    {
+      'kind': 'block',
+      'type': 'repeatUntil'
+    },
+    {
+      'kind': 'block',
+      'type': 'whileDo'
+    },
+  ]
+},
+{
+	'kind': 'category',
+	'name': 'Values and Strings',
+	'colour': '120',
+  'contents': [
+    {
+      'kind': 'block',
+      'type': 'VARSET'
+    },
+    {
+      'kind': 'block',
+      'type': 'Operation'
     },
     {
       'kind': 'block',
       'type': 'JoinBlock'
     },
-  ]
+    {
+      'kind': 'block',
+      'type': 'freeuse_text'
+    },
+]
 },
 {
 	'kind': 'category',
@@ -73,10 +100,6 @@ export const toolbox = {
     {
       'kind': 'block',
       'type': 'DO'
-    },
-    {
-      'kind': 'block',
-      'type': 'VARSET'
     },
     {
       'kind': 'block',

@@ -179,7 +179,7 @@ nitgGenerator.forBlock['DO'] = function(block, generator) {
   return code;
 };
 
-nitgGenerator.forBlock['Equality'] = function(block, generator) {
+nitgGenerator.forBlock['Operation'] = function(block, generator) {
   const text_arg1 = block.getFieldValue('Arg1');
   const dropdown_sign = block.getFieldValue('Sign');
   const text_arg2 = block.getFieldValue('Arg2');
@@ -224,7 +224,7 @@ nitgGenerator.forBlock['ApplyModifiers'] = function(block, generator) {
 
   const code = "ApplyModifiers('" + value_mods + "'" + aplmodplayer + ")";
   return [code, Order.ATOMIC];
-}
+};
 
 nitgGenerator.forBlock['Mod'] = function(block, generator) {
   const text_mod = block.getFieldValue('MOD');
@@ -234,5 +234,39 @@ nitgGenerator.forBlock['Mod'] = function(block, generator) {
   const value_arguments = generator.valueToCode(block, 'ARGUMENTS', Order.ATOMIC);
 
   const code = '*' + number_speed + ' ' + number_amp + ' ' + text_mod + ',' + value_arguments;
+  return [code, Order.ATOMIC];
+};
+
+nitgGenerator.forBlock['forDo'] = function(block, generator) {
+  const text_val = block.getFieldValue('VAL');
+  const text_exp = block.getFieldValue('EXP');
+
+  const statement_do = generator.statementToCode(block, 'Do');
+
+  const code = 'for ' + text_val + ' = ' + text_exp + ' do\n' + statement_do + '\nend';
+  return code;
+};
+
+nitgGenerator.forBlock['repeatUntil'] = function(block, generator) {
+  const value_label = generator.valueToCode(block, 'Label', Order.ATOMIC);
+  const statement_repeat = generator.statementToCode(block, 'Repeat');
+
+  const code = 'repeat\n' + statement_repeat + '\nuntil ' + value_label;
+  return code;
+};
+
+nitgGenerator.forBlock['whileDo'] = function(block, generator) {
+  const value_while = generator.valueToCode(block, 'While', Order.ATOMIC);
+  const statement_do = generator.statementToCode(block, 'Do');
+
+  const code = 'while ' + value_while + ' do\n' + statement_do + '\nend';
+  return code;
+};
+
+nitgGenerator.forBlock['freeuse_text'] = function(block, Generator) {
+  const text_txt = block.getFieldValue('TXT');
+  const value_text = generator.valueToCode(block, 'TEXT', Order.ATOMIC);
+
+  const code = text_txt + value_text;
   return [code, Order.ATOMIC];
 }
