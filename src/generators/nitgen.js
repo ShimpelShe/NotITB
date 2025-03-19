@@ -263,7 +263,7 @@ nitgGenerator.forBlock['whileDo'] = function(block, generator) {
   return code;
 };
 
-nitgGenerator.forBlock['freeuse_text'] = function(block, Generator) {
+nitgGenerator.forBlock['freeuse_text'] = function(block, generator) {
   const text_txt = block.getFieldValue('TXT');
   const value_text = generator.valueToCode(block, 'TEXT', Order.ATOMIC);
 
