@@ -107,6 +107,26 @@ export const toolbox = {
     },
     {
       'kind': 'block',
+      'type': 'finishSong'
+    },
+    {
+      'kind': 'block',
+      'type': 'gamestateBPX'
+    },
+    {
+      'kind': 'block',
+      'type': 'gsGetsongX'
+    },
+    {
+      'kind': 'block',
+      'type': 'gsReloadSteps'
+    },
+    {
+      'kind': 'block',
+      'type': 'gsSetSongX'
+    },
+    {
+      'kind': 'block',
       'type': 'ApplyModifiers'
     },
     {

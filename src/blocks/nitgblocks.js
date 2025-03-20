@@ -1058,5 +1058,109 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
   ],
   "output": null,
   "colour": 180
+},
+{
+  "type": "finishSong",
+  "tooltip": "",
+  "helpUrl": "",
+  "message0": "Finish Song %1",
+  "args0": [
+    {
+      "type": "input_end_row",
+      "name": "finishSong"
+    }
+  ],
+  "output": null,
+  "colour": 0
+},
+{
+  "type": "gamestateBPX",
+  "tooltip": "",
+  "helpUrl": "",
+  "message0": "Get Beats Per Second %1",
+  "args0": [
+    {
+      "type": "input_end_row",
+      "name": "label"
+    }
+  ],
+  "output": null,
+  "colour": 0
+},
+{
+  "type": "gsGetsongX",
+  "tooltip": "",
+  "helpUrl": "",
+  "message0": "Get Song %1 Visible? %2 %3",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "type",
+      "options": [
+        [
+          "Beat",
+          "beat"
+        ],
+        [
+          "Time",
+          "time"
+        ]
+      ]
+    },
+    {
+      "type": "field_checkbox",
+      "name": "vis",
+      "checked": "TRUE"
+    },
+    {
+      "type": "input_end_row",
+      "name": "label"
+    }
+  ],
+  "output": null,
+  "colour": 0
+},
+{
+  "type": "gsReloadSteps",
+  "tooltip": "",
+  "helpUrl": "",
+  "message0": "Reload Steps %1",
+  "args0": [
+    {
+      "type": "input_end_row",
+      "name": "label"
+    }
+  ],
+  "output": null,
+  "colour": 0
+},
+{
+  "type": "gsSetSongX",
+  "tooltip": "",
+  "helpUrl": "",
+  "message0": "Set Song %1 %2",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "NAME",
+      "options": [
+        [
+          "Beat",
+          "beat"
+        ],
+        [
+          "Position",
+          "position"
+        ]
+      ]
+    },
+    {
+      "type": "input_value",
+      "name": "label"
+    }
+  ],
+  "output": null,
+  "colour": 0,
+  "inputsInline": true
 }
 ]);

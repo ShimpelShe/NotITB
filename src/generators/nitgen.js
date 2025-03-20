@@ -347,4 +347,43 @@ nitgGenerator.forBlock['actor'] = function(block, generator) {
 
   const code = text_actname + value_actor;
   return [code, Order.ATOMIC];
+};
+
+nitgGenerator.forBlock['finishSong'] = function(block, generator) {
+
+  const code = 'finishsong()';
+  return [code, Order.ATOMIC];
+};
+
+nitgGenerator.forBlock['gamestateBPX'] = function(block, generator) {
+
+  const code = 'getcurbps()';
+  return [code, Order.ATOMIC];
+};
+
+nitgGenerator.forBlock['gsGetsongX'] = function(block, generator) {
+  const dropdown_type = block.getFieldValue('type');
+  const checkbox_vis = block.getFieldValue('vis');
+  
+  if (checkbox_vis === 'TRUE') {
+    var gsgsongvis = 'visible';
+  } else if (checkbox_vis === 'FALSE') {
+    var gsgsongvis = '';
+  }
+
+  const code = 'getsong' + dropdown_type + gsgsongvis + '()';
+  return [code, Order.ATOMIC];
+};
+
+nitgGenerator.forBlock['gsReloadSteps'] = function(block, generator) {
+  const code = 'reloadsteps()';
+  return [code, Order.ATOMIC];
+};
+
+nitgGenerator.forBlock['gsSetSongX'] = function(block, generator) {
+  const dropdown_name = block.getFieldValue('NAME');
+  const value_label = generator.valueToCode(block, 'label', Order.ATOMIC);
+
+  const code = 'setsong' + dropdown_name + '(' + value_label + ')';
+  return [code, Order.ATOMIC];
 }
