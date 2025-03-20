@@ -621,5 +621,24 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
   ],
   "output": null,
   "colour": 120
+},
+{
+  "type": "selfHidden",
+  "tooltip": "",
+  "helpUrl": "",
+  "message0": "Hidden %1 %2",
+  "args0": [
+    {
+      "type": "field_checkbox",
+      "name": "HIDEBOOL",
+      "checked": "TRUE"
+    },
+    {
+      "type": "input_end_row",
+      "name": "Hidden"
+    }
+  ],
+  "output": null,
+  "colour": 225
 }
 ]);

@@ -269,4 +269,15 @@ nitgGenerator.forBlock['freeuse_text'] = function(block, generator) {
 
   const code = text_txt + value_text;
   return [code, Order.ATOMIC];
+};
+
+nitgGenerator.forBlock['selfHidden'] = function(block, generator) {
+  const checkbox_hidebool = block.getFieldValue('HIDEBOOL');
+  if (checkbox_hidebool === 'TRUE') {
+    var endval_hidebool = '1';
+  } else if (checkbox_hidebool === 'FALSE') {
+    var endval_hidebool = '0';
+  }
+  const code = 'hidden(' + endval_hidebool + ')';
+  return [code, Order.ATOMIC];
 }

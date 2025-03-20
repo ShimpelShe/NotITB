@@ -94,7 +94,7 @@ export const toolbox = {
 },
 {
 	'kind': 'category',
-	'name': 'Actor CMDs',
+	'name': 'Gamestate',
 	'colour': '180',
 	'contents': [
     {
@@ -107,19 +107,34 @@ export const toolbox = {
     },
     {
       'kind': 'block',
-      'type': 'SELF'
-    },
-    {
-      'kind': 'block',
       'type': 'ApplyModifiers'
     },
     {
       'kind': 'block',
       'type': 'Mod'
     },
+  ]
+},
+{
+	'kind': 'category',
+	'name': 'Self',
+	'colour': '180',
+	'contents': [
+    {
+      'kind': 'block',
+      'type': 'DO'
+    },
+    {
+      'kind': 'block',
+      'type': 'SELF'
+    },
     {
       'kind': 'block',
       'type': 'sleep'
+    },
+    {
+      'kind': 'block',
+      'type': 'selfHidden'
     },
     {
       'kind': 'block',

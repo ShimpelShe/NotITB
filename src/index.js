@@ -32,6 +32,7 @@ const ws = Blockly.inject(blocklyDiv, {toolbox,
           minScale: 0.3,
           scaleSpeed: 1.2,
           pinch: true},
+  renderer: 'thrasos',
 });
 
 // This function resets the code div and shows the
