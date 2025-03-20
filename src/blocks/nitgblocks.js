@@ -446,11 +446,45 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
   "colour": 225
 },
 {
-  "type": "sleep",
+  "type": "selfTween",
   "tooltip": "",
   "helpUrl": "",
-  "message0": "Sleep %1 %2",
+  "message0": "%1 %2 %3",
   "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "TWEENTYPE",
+      "options": [
+        [
+          "Sleep",
+          "sleep"
+        ],
+        [
+          "Linear",
+          "linear"
+        ],
+        [
+          "Accelerate",
+          "accelerate"
+        ],
+        [
+          "Decelerate",
+          "decelerate"
+        ],
+        [
+          "Spring",
+          "spring"
+        ],
+        [
+          "Bounce Begin",
+          "bouncebegin"
+        ],
+        [
+          "Bounce End",
+          "bounceend"
+        ]
+      ]
+    },
     {
       "type": "field_number",
       "name": "TIME",
@@ -458,7 +492,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
     },
     {
       "type": "input_end_row",
-      "name": "SLEEP"
+      "name": "Tween"
     }
   ],
   "output": null,
@@ -640,5 +674,389 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
   ],
   "output": null,
   "colour": 225
+},
+{
+  "type": "selfXY",
+  "tooltip": "",
+  "helpUrl": "",
+  "message0": "%1  = %2 %3",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "selfXY",
+      "options": [
+        [
+          "X",
+          "x"
+        ],
+        [
+          "Y",
+          "y"
+        ],
+        [
+          "Z",
+          "z"
+        ],
+        [
+          "Add X",
+          "addx"
+        ],
+        [
+          "Add Y",
+          "addy"
+        ],
+        [
+          "Add Z",
+          "addz"
+        ],
+        [
+          "Rotation X",
+          "rotx"
+        ],
+        [
+          "Rotation Y",
+          "roty"
+        ],
+        [
+          "Rotation Z",
+          "rotz"
+        ],
+        [
+          "Skew X",
+          "skewx"
+        ],
+        [
+          "Skew Y",
+          "skewy"
+        ]
+      ]
+    },
+    {
+      "type": "field_number",
+      "name": "XY",
+      "value": 0
+    },
+    {
+      "type": "input_dummy",
+      "name": "NAME"
+    }
+  ],
+  "output": null,
+  "colour": 225
+},
+{
+  "type": "selfZoomto",
+  "tooltip": "",
+  "helpUrl": "",
+  "message0": "Zoom To %1 X %2 Y %3 %4",
+  "args0": [
+    {
+      "type": "input_end_row",
+      "name": "Label"
+    },
+    {
+      "type": "field_number",
+      "name": "X",
+      "value": 0
+    },
+    {
+      "type": "field_number",
+      "name": "Y",
+      "value": 0
+    },
+    {
+      "type": "input_end_row",
+      "name": "ZoomTo",
+      "align": "RIGHT"
+    }
+  ],
+  "output": null,
+  "colour": 225,
+  "inputsInline": true
+},
+{
+  "type": "selfDiffuse",
+  "tooltip": "",
+  "helpUrl": "",
+  "message0": "Diffuse [RGBA] %1 %2 %3 %4 %5 %6",
+  "args0": [
+    {
+      "type": "input_end_row",
+      "name": "Label",
+      "align": "CENTRE"
+    },
+    {
+      "type": "field_number",
+      "name": "R",
+      "value": 0
+    },
+    {
+      "type": "field_number",
+      "name": "G",
+      "value": 1
+    },
+    {
+      "type": "field_number",
+      "name": "B",
+      "value": 0
+    },
+    {
+      "type": "field_number",
+      "name": "A",
+      "value": 1
+    },
+    {
+      "type": "input_end_row",
+      "name": "Diffuse",
+      "align": "CENTRE"
+    }
+  ],
+  "output": null,
+  "colour": 225,
+  "inputsInline": false
+},
+{
+  "type": "selfEffect",
+  "tooltip": "",
+  "helpUrl": "",
+  "message0": "Effect %1 %2",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "FXTYPE",
+      "options": [
+        [
+          "Bob",
+          "bob"
+        ],
+        [
+          "Bounce",
+          "bounce"
+        ],
+        [
+          "Diffuse Blink",
+          "diffuseblink"
+        ],
+        [
+          "Diffuse Ramp",
+          "diffuseramp"
+        ],
+        [
+          "Diffuse Shift",
+          "diffuseshift"
+        ],
+        [
+          "Glow Blink",
+          "glowblink"
+        ],
+        [
+          "Glow Shift",
+          "glowshift"
+        ],
+        [
+          "Pulse",
+          "pulse"
+        ],
+        [
+          "Rainbow",
+          "rainbow"
+        ],
+        [
+          "Spin",
+          "spin"
+        ],
+        [
+          "Vibrate",
+          "vibrate"
+        ],
+        [
+          "Wag",
+          "wag"
+        ]
+      ]
+    },
+    {
+      "type": "input_value",
+      "name": "FX"
+    }
+  ],
+  "output": null,
+  "colour": 225
+},
+{
+  "type": "selfEffectCFG",
+  "tooltip": "",
+  "helpUrl": "",
+  "message0": "%1 %2",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "FXCFG",
+      "options": [
+        [
+          "Effect Color 1",
+          "effectcolor1"
+        ],
+        [
+          "Effect Color 2",
+          "effectcolor2"
+        ],
+        [
+          "Glow Color",
+          "glow"
+        ],
+        [
+          "Effect Clock",
+          "effectclock"
+        ],
+        [
+          "Effect Delay",
+          "effectdelay"
+        ],
+        [
+          "Effect Amplitude",
+          "effectmagnitude"
+        ],
+        [
+          "Effect Offset",
+          "effectoffset"
+        ],
+        [
+          "Effect Period",
+          "effectperiod"
+        ],
+        [
+          "Stop Effect",
+          "stopeffect"
+        ],
+        [
+          "Get seconds into Effect",
+          "getsecsintoeffect"
+        ]
+      ]
+    },
+    {
+      "type": "input_value",
+      "name": "CFG"
+    }
+  ],
+  "output": null,
+  "colour": 225
+},
+{
+  "type": "selfBlend",
+  "tooltip": "",
+  "helpUrl": "",
+  "message0": "Blend Type %1 %2",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "TYPE",
+      "options": [
+        [
+          "Normal",
+          "normal"
+        ],
+        [
+          "Add",
+          "add"
+        ],
+        [
+          "Subtract",
+          "subtract"
+        ],
+        [
+          "Modulate",
+          "modulate"
+        ],
+        [
+          "Copy Source",
+          "copysrc"
+        ],
+        [
+          "Alpha Mask",
+          "alphamask"
+        ],
+        [
+          "Alpha Knockout",
+          "alphaknockout"
+        ],
+        [
+          "Alpha Multiply",
+          "alphamultiply"
+        ],
+        [
+          "Weighted Multiply",
+          "weightedmultiply"
+        ],
+        [
+          "Invert Destination",
+          "invertdest"
+        ],
+        [
+          "No Effect",
+          "noeffect"
+        ]
+      ]
+    },
+    {
+      "type": "input_value",
+      "name": "Blend"
+    }
+  ],
+  "output": null,
+  "colour": 225
+},
+{
+  "type": "actorNames",
+  "tooltip": "",
+  "helpUrl": "",
+  "message0": "%1 name %2 %3",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "TYPE",
+      "options": [
+        [
+          "Set",
+          "setname"
+        ],
+        [
+          "Get",
+          "getname"
+        ]
+      ]
+    },
+    {
+      "type": "field_input",
+      "name": "NAME",
+      "text": "actor"
+    },
+    {
+      "type": "input_end_row",
+      "name": "GETSET"
+    }
+  ],
+  "output": null,
+  "colour": 180
+},
+{
+  "type": "actor",
+  "tooltip": "",
+  "helpUrl": "",
+  "message0": "Actor %1 %2",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "ACTNAME",
+      "text": "Actor Name"
+    },
+    {
+      "type": "input_value",
+      "name": "actor"
+    }
+  ],
+  "output": null,
+  "colour": 180
 }
 ]);

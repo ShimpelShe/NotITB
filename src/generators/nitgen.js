@@ -203,12 +203,13 @@ nitgGenerator.forBlock['playCommand'] = function(block, generator) {
   return [code, Order.ATOMIC];
 };
 
-nitgGenerator.forBlock['sleep'] = function(block, generator) {
+nitgGenerator.forBlock['selfTween'] = function(block, generator) {
+  const dropdown_tweentype = block.getFieldValue('TWEENTYPE');
   const number_time = block.getFieldValue('TIME');
 
-  const code = 'sleep(' + number_time + ')';
+  const code = dropdown_tweentype + '(' + number_time + ')';
   return [code, Order.ATOMIC];
-};
+}
 
 nitgGenerator.forBlock['ApplyModifiers'] = function(block, generator) {
   const value_mods = generator.valueToCode(block, 'MODS', Order.ATOMIC);
@@ -279,5 +280,71 @@ nitgGenerator.forBlock['selfHidden'] = function(block, generator) {
     var endval_hidebool = '0';
   }
   const code = 'hidden(' + endval_hidebool + ')';
+  return [code, Order.ATOMIC];
+};
+
+nitgGenerator.forBlock['selfXY'] = function(block, generator) {
+  const dropdown_selfxy = block.getFieldValue('selfXY');
+  const number_xy = block.getFieldValue('XY');
+
+  const code =  dropdown_selfxy + '(' + number_xy + ')';
+  return [code, Order.ATOMIC];
+};
+
+nitgGenerator.forBlock['selfZoomto'] = function(block, generator) {
+  const number_x = block.getFieldValue('X');
+  const number_y = block.getFieldValue('Y');
+
+  const code = 'zoomto(' + number_x + ', ' + number_y + ')';
+  return [code, Order.ATOMIC];
+};
+
+nitgGenerator.forBlock['selfDiffuse'] = function(block, generator) {
+  const number_r = block.getFieldValue('R');
+  const number_g = block.getFieldValue('G');
+  const number_b = block.getFieldValue('B');
+  const number_a = block.getFieldValue('A');
+
+  const code = 'diffuse(' + number_r + ', ' + number_g + ', ' + number_b + ', ' + number_a + ')';
+  return [code, Order.ATOMIC];
+};
+
+nitgGenerator.forBlock['selfEffect'] = function(block, generator) {
+  const dropdown_fxtype = block.getFieldValue('FXTYPE');
+  const value_fx = generator.valueToCode(block, 'FX', Order.ATOMIC);
+
+  const code = dropdown_fxtype + '(' + value_fx + ')';
+  return [code, Order.ATOMIC];
+};
+
+nitgGenerator.forBlock['selfEffectCFG'] = function(block, generator) {
+  const dropdown_fxcfg = block.getFieldValue('FXCFG');
+  const value_cfg = generator.valueToCode(block, 'CFG', Order.ATOMIC);
+
+  const code = dropdown_fxcfg + '(' + value_cfg + ')';
+  return [code, Order.ATOMIC];
+};
+
+nitgGenerator.forBlock['selfBlend'] = function(block, generator) {
+  const dropdown_type = block.getFieldValue('TYPE');
+  const value_blend = generator.valueToCode(block, 'Blend', Order.ATOMIC);
+
+  const code = dropdown_type + '(' + value_blend + ')';
+  return [code, Order.ATOMIC];
+};
+
+nitgGenerator.forBlock['actorNames'] = function(block, generator) {
+  const dropdown_type = block.getFieldValue('TYPE');
+  const text_name = block.getFieldValue('NAME');
+
+  const code = dropdown_type + '(' + text_name + ')';
+  return [code, Order.ATOMIC];
+};
+
+nitgGenerator.forBlock['actor'] = function(block, generator) {
+  const text_actname = block.getFieldValue('ACTNAME');
+  const value_actor = generator.valueToCode(block, 'actor', Order.ATOMIC);
+
+  const code = text_actname + value_actor;
   return [code, Order.ATOMIC];
 }

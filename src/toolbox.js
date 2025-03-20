@@ -130,11 +130,43 @@ export const toolbox = {
     },
     {
       'kind': 'block',
-      'type': 'sleep'
+      'type': 'actor'
+    },
+    {
+      'kind': 'block',
+      'type': 'actorNames'
+    },
+    {
+      'kind': 'block',
+      'type': 'selfTween'
+    },
+    {
+      'kind': 'block',
+      'type': 'selfXY'
+    },
+    {
+      'kind': 'block',
+      'type': 'selfZoomto'
+    },
+    {
+      'kind': 'block',
+      'type': 'selfDiffuse'
+    },
+    {
+      'kind': 'block',
+      'type': 'selfEffect'
+    },
+    {
+      'kind': 'block',
+      'type': 'selfEffectCFG'
     },
     {
       'kind': 'block',
       'type': 'selfHidden'
+    },
+    {
+      'kind': 'block',
+      'type': 'selfBlend'
     },
     {
       'kind': 'block',
