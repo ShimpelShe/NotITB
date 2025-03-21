@@ -20,19 +20,23 @@ export const toolbox = {
 	'name': 'Layout',
 	'colour': '210',
 	'contents': [
-	{
+{
       'kind': 'block',
       'type': 'ActorFrame'
     },
-	{
+	  {
       'kind': 'block',
       'type': 'Layer'
     },
-	{
+	  {
       'kind': 'block',
       'type': 'ActorType'
     },
-	{
+    {
+      'kind': 'block',
+      'type': 'file'
+    },
+	  {
       'kind': 'block',
       'type': 'Command'
     },
@@ -89,6 +93,26 @@ export const toolbox = {
     {
       'kind': 'block',
       'type': 'freeuse_text'
+    },
+    {
+      'kind': 'block',
+      'type': 'screenCenterXY'
+    },
+    {
+      'kind': 'block',
+      'type': 'number'
+    },
+    {
+      'kind': 'block',
+      'type': '_2vector'
+    },
+    {
+      'kind': 'block',
+      'type': '_3vector'
+    },
+    {
+      'kind': 'block',
+      'type': '_4vector'
     },
 ]
 },

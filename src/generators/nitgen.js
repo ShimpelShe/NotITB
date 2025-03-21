@@ -205,7 +205,7 @@ nitgGenerator.forBlock['playCommand'] = function(block, generator) {
 
 nitgGenerator.forBlock['selfTween'] = function(block, generator) {
   const dropdown_tweentype = block.getFieldValue('TWEENTYPE');
-  const number_time = block.getFieldValue('TIME');
+  const number_time = generator.valueToCode(block, 'TweenNum', Order.ATOMIC);
 
   const code = dropdown_tweentype + '(' + number_time + ')';
   return [code, Order.ATOMIC];
@@ -285,27 +285,23 @@ nitgGenerator.forBlock['selfHidden'] = function(block, generator) {
 
 nitgGenerator.forBlock['selfXY'] = function(block, generator) {
   const dropdown_selfxy = block.getFieldValue('selfXY');
-  const number_xy = block.getFieldValue('XY');
+  const number_xy = generator.valueToCode(block, 'Value', Order.ATOMIC);
 
   const code =  dropdown_selfxy + '(' + number_xy + ')';
   return [code, Order.ATOMIC];
 };
 
 nitgGenerator.forBlock['selfZoomto'] = function(block, generator) {
-  const number_x = block.getFieldValue('X');
-  const number_y = block.getFieldValue('Y');
+  const number_xy = generator.valueToCode(block, 'ZoomTo', Order.ATOMIC);
 
-  const code = 'zoomto(' + number_x + ', ' + number_y + ')';
+  const code = 'zoomto(' + number_xy + ')';
   return [code, Order.ATOMIC];
 };
 
 nitgGenerator.forBlock['selfDiffuse'] = function(block, generator) {
-  const number_r = block.getFieldValue('R');
-  const number_g = block.getFieldValue('G');
-  const number_b = block.getFieldValue('B');
-  const number_a = block.getFieldValue('A');
+  const number_rgba = generator.valueToCode(block, 'RGBA', Order.ATOMIC);
 
-  const code = 'diffuse(' + number_r + ', ' + number_g + ', ' + number_b + ', ' + number_a + ')';
+  const code = 'diffuse(' + number_rgba + ')';
   return [code, Order.ATOMIC];
 };
 
@@ -385,5 +381,53 @@ nitgGenerator.forBlock['gsSetSongX'] = function(block, generator) {
   const value_label = generator.valueToCode(block, 'label', Order.ATOMIC);
 
   const code = 'setsong' + dropdown_name + '(' + value_label + ')';
+  return [code, Order.ATOMIC];
+};
+
+nitgGenerator.forBlock['file'] = function(block, generator) {
+  const text_filename = block.getFieldValue('fileName');
+
+  const code = 'File="' + text_filename + '"';
+  return code;
+};
+
+nitgGenerator.forBlock['screenCenterXY'] = function(block, generator) {
+  const dropdown_type = block.getFieldValue('Type');
+
+  const code = 'SCREEN_CENTER' + dropdown_type;
+  return [code, Order.ATOMIC];
+};
+
+nitgGenerator.forBlock['_2vector'] = function(block, generator) {
+  const number_val1 = block.getFieldValue('val1');
+  const number_val2 = block.getFieldValue('val2');
+
+  const code = number_val1 + ', ' + number_val2;
+  return [code, Order.ATOMIC];
+};
+
+nitgGenerator.forBlock['_3vector'] = function(block, generator) {
+  const number_val1 = block.getFieldValue('val1');
+  const number_val2 = block.getFieldValue('val2');
+  const number_val3 = block.getFieldValue('val3');
+
+  const code = number_val1 + ', ' + number_val2 + ', ' + number_val3;
+  return [code, Order.ATOMIC];
+};
+
+nitgGenerator.forBlock['_4vector'] = function(block, generator) {
+  const number_val1 = block.getFieldValue('val1');
+  const number_val2 = block.getFieldValue('val2');
+  const number_val3 = block.getFieldValue('val3');
+  const number_val4 = block.getFieldValue('val3');
+
+  const code = number_val1 + ', ' + number_val2 + ', ' + number_val3 + ', ' + number_val4;
+  return [code, Order.ATOMIC];
+};
+
+nitgGenerator.forBlock['number'] = function(block, generator) {
+  const number_num = block.getFieldValue('num');
+
+  const code = number_num;
   return [code, Order.ATOMIC];
 }

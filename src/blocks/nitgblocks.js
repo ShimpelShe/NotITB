@@ -449,7 +449,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
   "type": "selfTween",
   "tooltip": "",
   "helpUrl": "",
-  "message0": "%1 %2 %3",
+  "message0": "%1 %2",
   "args0": [
     {
       "type": "field_dropdown",
@@ -486,13 +486,8 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
       ]
     },
     {
-      "type": "field_number",
-      "name": "TIME",
-      "value": 1
-    },
-    {
-      "type": "input_end_row",
-      "name": "Tween"
+      "type": "input_value",
+      "name": "TweenNum"
     }
   ],
   "output": null,
@@ -679,7 +674,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
   "type": "selfXY",
   "tooltip": "",
   "helpUrl": "",
-  "message0": "%1  = %2 %3",
+  "message0": "%1  = %2",
   "args0": [
     {
       "type": "field_dropdown",
@@ -732,13 +727,8 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
       ]
     },
     {
-      "type": "field_number",
-      "name": "XY",
-      "value": 0
-    },
-    {
-      "type": "input_dummy",
-      "name": "NAME"
+      "type": "input_value",
+      "name": "Value"
     }
   ],
   "output": null,
@@ -748,26 +738,12 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
   "type": "selfZoomto",
   "tooltip": "",
   "helpUrl": "",
-  "message0": "Zoom To %1 X %2 Y %3 %4",
+  "message0": "Zoom To %1",
   "args0": [
     {
-      "type": "input_end_row",
-      "name": "Label"
-    },
-    {
-      "type": "field_number",
-      "name": "X",
-      "value": 0
-    },
-    {
-      "type": "field_number",
-      "name": "Y",
-      "value": 0
-    },
-    {
-      "type": "input_end_row",
+      "type": "input_value",
       "name": "ZoomTo",
-      "align": "RIGHT"
+      "align": "CENTER"
     }
   ],
   "output": null,
@@ -778,38 +754,13 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
   "type": "selfDiffuse",
   "tooltip": "",
   "helpUrl": "",
-  "message0": "Diffuse [RGBA] %1 %2 %3 %4 %5 %6",
+  "message0": "Diffuse [RGBA] %1",
   "args0": [
     {
-      "type": "input_end_row",
-      "name": "Label",
+      "type": "input_value",
+      "name": "RGBA",
       "align": "CENTRE"
     },
-    {
-      "type": "field_number",
-      "name": "R",
-      "value": 0
-    },
-    {
-      "type": "field_number",
-      "name": "G",
-      "value": 1
-    },
-    {
-      "type": "field_number",
-      "name": "B",
-      "value": 0
-    },
-    {
-      "type": "field_number",
-      "name": "A",
-      "value": 1
-    },
-    {
-      "type": "input_end_row",
-      "name": "Diffuse",
-      "align": "CENTRE"
-    }
   ],
   "output": null,
   "colour": 225,
@@ -1162,5 +1113,159 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
   "output": null,
   "colour": 0,
   "inputsInline": true
+},
+{
+  "type": "file",
+  "tooltip": "",
+  "helpUrl": "",
+  "message0": "File: %1 %2",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "fileName",
+      "text": "./image.png"
+    },
+    {
+      "type": "input_end_row",
+      "name": "file"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 270
+},
+{
+  "type": "screenCenterXY",
+  "tooltip": "",
+  "helpUrl": "",
+  "message0": "Screen Center %1 %2",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "Type",
+      "options": [
+        [
+          "X",
+          "_X"
+        ],
+        [
+          "Y",
+          "_Y"
+        ]
+      ]
+    },
+    {
+      "type": "input_end_row",
+      "name": "label"
+    }
+  ],
+  "output": null,
+  "colour": 120
+},
+{
+  "type": "_2vector",
+  "tooltip": "",
+  "helpUrl": "",
+  "message0": "%1 , %2 %3",
+  "args0": [
+    {
+      "type": "field_number",
+      "name": "val1",
+      "value": 0
+    },
+    {
+      "type": "field_number",
+      "name": "val2",
+      "value": 0
+    },
+    {
+      "type": "input_end_row",
+      "name": "nums"
+    }
+  ],
+  "output": null,
+  "colour": 225
+},
+{
+  "type": "_3vector",
+  "tooltip": "",
+  "helpUrl": "",
+  "message0": "%1 , %2 , %3 %4",
+  "args0": [
+    {
+      "type": "field_number",
+      "name": "val1",
+      "value": 0
+    },
+    {
+      "type": "field_number",
+      "name": "val2",
+      "value": 0
+    },
+    {
+      "type": "field_number",
+      "name": "val3",
+      "value": 0
+    },
+    {
+      "type": "input_end_row",
+      "name": "nums"
+    }
+  ],
+  "output": null,
+  "colour": 225
+},
+{
+  "type": "_4vector",
+  "tooltip": "",
+  "helpUrl": "",
+  "message0": "%1 , %2 , %3 , %4 %5",
+  "args0": [
+    {
+      "type": "field_number",
+      "name": "val1",
+      "value": 0
+    },
+    {
+      "type": "field_number",
+      "name": "val2",
+      "value": 0
+    },
+    {
+      "type": "field_number",
+      "name": "val3",
+      "value": 0
+    },
+    {
+      "type": "field_number",
+      "name": "val4",
+      "value": 0
+    },
+    {
+      "type": "input_end_row",
+      "name": "nums"
+    }
+  ],
+  "output": null,
+  "colour": 225
+},
+{
+  "type": "number",
+  "tooltip": "",
+  "helpUrl": "",
+  "message0": "%1 %2",
+  "args0": [
+    {
+      "type": "field_number",
+      "name": "num",
+      "value": 0
+    },
+    {
+      "type": "input_end_row",
+      "name": "num"
+    }
+  ],
+  "output": null,
+  "colour": 225
 }
 ]);
