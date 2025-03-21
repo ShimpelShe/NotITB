@@ -42,6 +42,14 @@ export const toolbox = {
     },
     {
       'kind': 'block',
+      'type': 'messageCommand'
+    },
+    {
+      'kind': 'block',
+      'type': 'messageBroadcast'
+    },
+    {
+      'kind': 'block',
       'type': 'Function'
     },
   ]
@@ -215,6 +223,28 @@ export const toolbox = {
     {
       'kind': 'block',
       'type': 'playCommand'
+    },
+  ]
+},
+{
+  'kind': 'category',
+  'name': 'Display',
+  'colour': '180',
+  'contents': [
+    {
+      'kind': 'block',
+      'type': 'DO',
+      "inputs": {
+        "NAME": {
+          "block": {
+            "type": "rageDisplay"
+          },
+        },
+      }
+    },
+    {
+      'kind': 'block',
+      'type': 'rageDisplay'
     },
   ]
 },

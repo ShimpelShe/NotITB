@@ -430,4 +430,26 @@ nitgGenerator.forBlock['number'] = function(block, generator) {
 
   const code = number_num;
   return [code, Order.ATOMIC];
+};
+
+nitgGenerator.forBlock['messageCommand'] = function(block, generator) {
+  const text_msgname = block.getFieldValue('msgName');
+  const statement_blocks = generator.statementToCode(block, 'blocks');
+
+  const code = text_msgname + 'MessageCommand"' + statement_blocks + '"';
+  return code;
+};
+
+nitgGenerator.forBlock['messageBroadcast'] = function(block, generator) {
+  const text_msgname = block.getFieldValue('MSGNAME');
+
+  const code = "MESSAGEMAN:Broadcast('" + text_msgname + "'";
+  return code;
+};
+
+nitgGenerator.forBlock['rageDisplay'] = function(block, generator) {
+  const value_value = generator.valueToCode(block, 'Value', Order.ATOMIC);
+  
+  const code = 'DISPLAY:' + value_value;
+  return [code, Order.ATOMIC];
 }

@@ -1267,5 +1267,64 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
   ],
   "output": null,
   "colour": 225
+},
+{
+  "type": "messageCommand",
+  "tooltip": "",
+  "helpUrl": "",
+  "message0": "%1 MSG Command %2 %3",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "msgName",
+      "text": "Name"
+    },
+    {
+      "type": "input_dummy",
+      "name": "label"
+    },
+    {
+      "type": "input_statement",
+      "name": "blocks"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 270
+},
+{
+  "type": "messageBroadcast",
+  "tooltip": "",
+  "helpUrl": "",
+  "message0": "Broadcast Message %1 %2",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "MSGNAME",
+      "text": "Name"
+    },
+    {
+      "type": "input_end_row",
+      "name": "mb"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 270
+},
+{
+  "type": "rageDisplay",
+  "tooltip": "",
+  "helpUrl": "",
+  "message0": "Display %1",
+  "args0": [
+    {
+      "type": "input_value",
+      "name": "Value",
+      "align": "CENTRE"
+    }
+  ],
+  "output": null,
+  "colour": 180
 }
 ]);
