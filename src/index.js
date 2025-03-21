@@ -67,3 +67,10 @@ ws.addChangeListener((e) => {
   }
   runCode();
 });
+
+/*
+
+Note to self: Actual colors in nitgblocks.js
+Pointer Variables in both nitgen.js and nitgblocks.js
+
+*/

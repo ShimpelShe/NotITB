@@ -12,13 +12,23 @@ your toolbox from scratch, or carefully choosing whether you need each block
 listed here.
 */
 
+// Color vars here too to avoid explosion
+
+var CustomRed = '%{BKY_CRED}'
+var CustomBlue = '%{BKY_CBLU}'
+var CustomCyan = '%{BKY_CCYA}'
+var CustomPurple = '%{BKY_CPUR}'
+var CustomPink = '%{BKY_CPNK}'
+var CustomYellow = '%{BKY_CYLW}'
+var CustomGreen = '%{BKY_CGRN}'
+
 export const toolbox = {
   'kind': 'categoryToolbox',
   'contents': [
 	{
 	'kind': 'category',
 	'name': 'Layout',
-	'colour': '210',
+	'colour': CustomBlue,
 	'contents': [
 {
       'kind': 'block',
@@ -57,7 +67,7 @@ export const toolbox = {
 {
 	'kind': 'category',
 	'name': 'Flow',
-	'colour': '60',
+	'colour': CustomYellow,
 	'contents': [
     {
       'kind': 'block',
@@ -73,6 +83,10 @@ export const toolbox = {
     },
     {
       'kind': 'block',
+      'type': 'DO'
+    },
+    {
+      'kind': 'block',
       'type': 'repeatUntil'
     },
     {
@@ -84,7 +98,7 @@ export const toolbox = {
 {
 	'kind': 'category',
 	'name': 'Values and Strings',
-	'colour': '120',
+	'colour': CustomGreen,
   'contents': [
     {
       'kind': 'block',
@@ -127,11 +141,18 @@ export const toolbox = {
 {
 	'kind': 'category',
 	'name': 'Gamestate',
-	'colour': '180',
+	'colour': CustomRed,
 	'contents': [
     {
       'kind': 'block',
-      'type': 'DO'
+      'type': 'DO',
+      'inputs': {
+        'NAME': {
+          'block': {
+            'type': 'GameState'
+          },
+        },
+      }
     },
     {
       'kind': 'block',
@@ -155,7 +176,17 @@ export const toolbox = {
     },
     {
       'kind': 'block',
-      'type': 'gsSetSongX'
+      'type': 'gsSetSongX',
+      'inputs': {
+        'label': {
+          'block': {
+            'type': 'number',
+            'fields': {
+              'num': 10
+            },
+          },
+        },
+      }
     },
     {
       'kind': 'block',
@@ -170,11 +201,18 @@ export const toolbox = {
 {
 	'kind': 'category',
 	'name': 'Self',
-	'colour': '180',
+	'colour': CustomPurple,
 	'contents': [
     {
       'kind': 'block',
-      'type': 'DO'
+      'type': 'DO',
+      'inputs': {
+        'NAME': {
+          'block': {
+            'type': 'SELF'
+          },
+        },
+      }
     },
     {
       'kind': 'block',
@@ -190,19 +228,60 @@ export const toolbox = {
     },
     {
       'kind': 'block',
-      'type': 'selfTween'
+      'type': 'selfTween',
+      'inputs': {
+        'TweenNum': {
+          'block': {
+            'type': 'number',
+            'fields': {
+              'num': 1
+            },
+          },
+        },
+      }
     },
     {
       'kind': 'block',
-      'type': 'selfXY'
+      'type': 'selfXY',
+      'inputs': {
+        'Value': {
+          'block': {
+            'type': 'number'
+          },
+        },
+      }
     },
     {
       'kind': 'block',
-      'type': 'selfZoomto'
+      'type': 'selfZoomto',
+      'inputs': {
+        'ZoomTo': {
+          'block': {
+            'type': '_2vector',
+            'fields': {
+              'val1': 200,
+              'val2': 300
+            },
+          },
+        },
+      }
     },
     {
       'kind': 'block',
-      'type': 'selfDiffuse'
+      'type': 'selfDiffuse',
+      'inputs': {
+        'RGBA': {
+          'block': {
+            'type': '_4vector',
+            'fields': {
+              'val1': 1,
+              'val2': 0.75,
+              'val3': 0.1,
+              'val4': 1
+            },
+          },
+        },
+      }
     },
     {
       'kind': 'block',
@@ -218,7 +297,17 @@ export const toolbox = {
     },
     {
       'kind': 'block',
-      'type': 'selfBlend'
+      'type': 'selfBlend',
+      'inputs': {
+        'Blend': {
+          'block': {
+            'type': 'number',
+            'fields': {
+              'num': 1
+            }
+          },
+        },
+      }
     },
     {
       'kind': 'block',
@@ -229,15 +318,15 @@ export const toolbox = {
 {
   'kind': 'category',
   'name': 'Display',
-  'colour': '180',
+  'colour': CustomCyan,
   'contents': [
     {
       'kind': 'block',
       'type': 'DO',
-      "inputs": {
-        "NAME": {
-          "block": {
-            "type": "rageDisplay"
+      'inputs': {
+        'NAME': {
+          'block': {
+            'type': 'rageDisplay'
           },
         },
       }
@@ -251,7 +340,7 @@ export const toolbox = {
 {
   'kind': 'category',
   'name': 'User Custom',
-  'colour': '0',
+  'colour': CustomRed,
   'contents': [
     {
       'kind': 'block',

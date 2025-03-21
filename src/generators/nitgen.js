@@ -1,62 +1,21 @@
 import * as Blockly from 'blockly';
 
+// Color variables here too to stop whining (in case of)
+
+var CustomRed = '%{BKY_CRED}'
+var CustomBlue = '%{BKY_CBLU}'
+var CustomCyan = '%{BKY_CCYA}'
+var CustomPurple = '%{BKY_CPUR}'
+var CustomPink = '%{BKY_CPNK}'
+var CustomYellow = '%{BKY_CYLW}'
+var CustomGreen = '%{BKY_CGRN}'
+
+// Blocks Down Below
+
 export const nitgGenerator = new Blockly.Generator('NITG');
 const Order = {
   ATOMIC: 0,
 };
-
-nitgGenerator.forBlock['logic_null'] = function(block) {
-  return ['null', Order.ATOMIC];
-};
-
-nitgGenerator.forBlock['text'] = function(block) {
-  const textValue = block.getFieldValue('TEXT');
-  const code = `"${textValue}"`;
-  return [code, Order.ATOMIC];
-};
-
-nitgGenerator.forBlock['math_number'] = function(block) {
-  const code = String(block.getFieldValue('NUM'));
-  return [code, Order.ATOMIC];
-};
-
-nitgGenerator.forBlock['logic_boolean'] = function(block) {
-  const code = (block.getFieldValue('BOOL') === 'TRUE') ? 'true' : 'false';
-  return [code, Order.ATOMIC];
-};
-
-nitgGenerator.forBlock['member'] = function(block, generator) {
-  const name = block.getFieldValue('MEMBER_NAME');
-  const value = generator.valueToCode(
-      block, 'MEMBER_VALUE', Order.ATOMIC);
-  const code = `"${name}": ${value}`;
-  return code;
-};
-
-nitgGenerator.forBlock['lists_create_with'] = function(block, generator) {
-  const values = [];
-  for (let i = 0; i < block.itemCount_; i++) {
-    const valueCode = generator.valueToCode(block, 'ADD' + i,
-        Order.ATOMIC);
-    if (valueCode) {
-      values.push(valueCode);
-    }
-  }
-  const valueString = values.join(',\n');
-  const indentedValueString =
-      generator.prefixLines(valueString, generator.INDENT);
-  const codeString = '[\n' + indentedValueString + '\n]';
-  return [codeString, Order.ATOMIC];
-};
-
-nitgGenerator.forBlock['object'] = function(block, generator) {
-  const statementMembers =
-      generator.statementToCode(block, 'MEMBERS');
-  const code = '{\n' + statementMembers + '\n}';
-  return [code, Order.ATOMIC];
-};
-
-// this "scrub_" thing has been messing my shit with commas (Fixed)
 
 nitgGenerator.scrub_ = function(block, code, thisOnly) {
   const nextBlock =
@@ -67,10 +26,9 @@ nitgGenerator.scrub_ = function(block, code, thisOnly) {
   return code;
 };
 
-// custom blocks from here onward
-
 nitgGenerator.forBlock['ActorFrame'] = function(block, generator) {
   const statement_actorframe = generator.statementToCode(block, 'ACTORFRAME');
+  block.setColour(CustomRed)
 
   const code = '<ActorFrame><children>\n' + statement_actorframe + '\n</children></ActorFrame>';
   return code;

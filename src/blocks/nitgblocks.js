@@ -1,43 +1,31 @@
 import * as Blockly from 'blockly';
 
-export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
-  "type": "object",
-  "message0": "{ %1 %2 }",
-  "args0": [
-    {
-      "type": "input_dummy"
-    },
-    {
-      "type": "input_statement",
-      "name": "MEMBERS"
-    }
-  ],
-  "output": null,
-  "colour": 230,
-},
-{
-  "type": "member",
-  "message0": "%1 %2 %3",
-  "args0": [
-    {
-      "type": "field_input",
-      "name": "MEMBER_NAME",
-      "text": ""
-    },
-    {
-      "type": "field_label",
-      "name": "COLON",
-      "text": ":"
-    },
-    {
-      "type": "input_value",
-      "name": "MEMBER_VALUE"
-    }
-  ],
-  "previousStatement": null,
-  "nextStatement": null,
-  "colour": 230,
-},
+// Color variables in here, also in nitgen.js to stop whining
+
+Blockly.Msg.CRED = 'b05860'
+var CustomRed = '%{BKY_CRED}'
+
+Blockly.Msg.CBLU = '6c68b0'
+var CustomBlue = '%{BKY_CBLU}'  
+
+Blockly.Msg.CCYA = '4cb4b0'
+var CustomCyan = '%{BKY_CCYA}'
+
+Blockly.Msg.CPUR = '815bb3'
+var CustomPurple = '%{BKY_CPUR}'
+
+Blockly.Msg.CPNK = 'b562ae'
+var CustomPink = '%{BKY_CPNK}'
+
+Blockly.Msg.CYLW = 'd0b310'
+var CustomYellow = '%{BKY_CYLW}'
+
+Blockly.Msg.CGRN = '60b474'
+var CustomGreen = '%{BKY_CGRN}'
+
+// Blocks Down Below
+
+export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([
 {
   "type": "ActorFrame",
   "tooltip": "",
@@ -49,7 +37,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
       "name": "ACTORFRAME",
     }
   ],
-  "colour": 0
+  "colour": CustomRed,
 },
 {
   "type": "Layer",
@@ -69,7 +57,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
   ],
   "previousStatement": null,
   "nextStatement": null,
-  "colour": 225
+  "colour": CustomBlue
 },
 {
   "type": "ActorType",
@@ -90,7 +78,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
   ],
   "previousStatement": null,
   "nextStatement": null,
-  "colour": 270
+  "colour": CustomPurple
 },
 {
   "type": "Command",
@@ -115,7 +103,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
   ],
   "previousStatement": null,
   "nextStatement": null,
-  "colour": 270
+  "colour": CustomPurple
 },
 {
   "type": "Function",
@@ -140,7 +128,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
   ],
   "previousStatement": null,
   "nextStatement": null,
-  "colour": 320
+  "colour": CustomPink
 },
 {
   "type": "IFDO",
@@ -159,7 +147,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
   ],
   "previousStatement": null,
   "nextStatement": null,
-  "colour": 60
+  "colour": CustomYellow
 },
 {
   "type": "IFDOELSE",
@@ -182,7 +170,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
   ],
   "previousStatement": null,
   "nextStatement": null,
-  "colour": 60
+  "colour": CustomYellow
 },
 {
   "type": "Generic_Custom",
@@ -202,7 +190,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
     }
   ],
   "output": null,
-  "colour": 0
+  "colour": CustomRed
 },
 {
   "type": "Generic_CodeCustom",
@@ -223,7 +211,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
   ],
   "previousStatement": null,
   "nextStatement": null,
-  "colour": 0
+  "colour": CustomRed
 },
 {
   "type": "VARSET",
@@ -257,7 +245,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
   ],
   "previousStatement": null,
   "nextStatement": null,
-  "colour": 120
+  "colour": CustomGreen
 },
 {
   "type": "GameState",
@@ -271,7 +259,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
     }
   ],
   "output": null,
-  "colour": 180
+  "colour": CustomCyan
 },
 {
   "type": "JoinBlock",
@@ -298,7 +286,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
     }
   ],
   "output": null,
-  "colour": 120,
+  "colour": CustomGreen,
   "inputsInline": true
 },
 {
@@ -314,7 +302,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
   ],
   "previousStatement": null,
   "nextStatement": null,
-  "colour": 180
+  "colour": CustomYellow
 },
 {
   "type": "Operation",
@@ -396,7 +384,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
     }
   ],
   "output": null,
-  "colour": 120
+  "colour": CustomGreen
 },
 {
   "type": "SELF",
@@ -410,7 +398,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
     }
   ],
   "output": null,
-  "colour": 180
+  "colour": CustomCyan
 },
 {
   "type": "playCommand",
@@ -443,7 +431,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
     }
   ],
   "output": null,
-  "colour": 225
+  "colour": CustomPurple
 },
 {
   "type": "selfTween",
@@ -491,7 +479,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
     }
   ],
   "output": null,
-  "colour": 225
+  "colour": CustomPurple
 },
 {
   "type": "ApplyModifiers",
@@ -527,7 +515,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
     }
   ],
   "output": null,
-  "colour": 0,
+  "colour": CustomRed,
   "inputsInline": true
 },
 {
@@ -557,7 +545,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
     }
   ],
   "output": null,
-  "colour": 0
+  "colour": CustomRed
 },
 {
   "type": "forDo",
@@ -586,7 +574,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
   ],
   "previousStatement": null,
   "nextStatement": null,
-  "colour": 60
+  "colour": CustomYellow
 },
 {
   "type": "repeatUntil",
@@ -606,7 +594,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
   ],
   "previousStatement": null,
   "nextStatement": null,
-  "colour": 60
+  "colour": CustomYellow
 },
 {
   "type": "whileDo",
@@ -629,7 +617,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
   ],
   "previousStatement": null,
   "nextStatement": null,
-  "colour": 60
+  "colour": CustomYellow
 },
 {
   "type": "freeuse_text",
@@ -649,7 +637,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
     }
   ],
   "output": null,
-  "colour": 120
+  "colour": CustomGreen
 },
 {
   "type": "selfHidden",
@@ -668,7 +656,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
     }
   ],
   "output": null,
-  "colour": 225
+  "colour": CustomPurple
 },
 {
   "type": "selfXY",
@@ -732,7 +720,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
     }
   ],
   "output": null,
-  "colour": 225
+  "colour": CustomPurple
 },
 {
   "type": "selfZoomto",
@@ -747,7 +735,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
     }
   ],
   "output": null,
-  "colour": 225,
+  "colour": CustomPurple,
   "inputsInline": true
 },
 {
@@ -763,7 +751,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
     },
   ],
   "output": null,
-  "colour": 225,
+  "colour": CustomPurple,
   "inputsInline": false
 },
 {
@@ -832,7 +820,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
     }
   ],
   "output": null,
-  "colour": 225
+  "colour": CustomPurple
 },
 {
   "type": "selfEffectCFG",
@@ -892,7 +880,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
     }
   ],
   "output": null,
-  "colour": 225
+  "colour": CustomPurple
 },
 {
   "type": "selfBlend",
@@ -956,7 +944,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
     }
   ],
   "output": null,
-  "colour": 225
+  "colour": CustomPurple
 },
 {
   "type": "actorNames",
@@ -989,7 +977,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
     }
   ],
   "output": null,
-  "colour": 180
+  "colour": CustomCyan
 },
 {
   "type": "actor",
@@ -1008,7 +996,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
     }
   ],
   "output": null,
-  "colour": 180
+  "colour": CustomCyan
 },
 {
   "type": "finishSong",
@@ -1022,7 +1010,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
     }
   ],
   "output": null,
-  "colour": 0
+  "colour": CustomRed
 },
 {
   "type": "gamestateBPX",
@@ -1036,7 +1024,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
     }
   ],
   "output": null,
-  "colour": 0
+  "colour": CustomRed
 },
 {
   "type": "gsGetsongX",
@@ -1069,7 +1057,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
     }
   ],
   "output": null,
-  "colour": 0
+  "colour": CustomRed
 },
 {
   "type": "gsReloadSteps",
@@ -1083,7 +1071,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
     }
   ],
   "output": null,
-  "colour": 0
+  "colour": CustomRed
 },
 {
   "type": "gsSetSongX",
@@ -1111,7 +1099,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
     }
   ],
   "output": null,
-  "colour": 0,
+  "colour": CustomRed,
   "inputsInline": true
 },
 {
@@ -1160,7 +1148,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
     }
   ],
   "output": null,
-  "colour": 120
+  "colour": CustomGreen
 },
 {
   "type": "_2vector",
@@ -1184,7 +1172,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
     }
   ],
   "output": null,
-  "colour": 225
+  "colour": CustomPurple
 },
 {
   "type": "_3vector",
@@ -1213,7 +1201,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
     }
   ],
   "output": null,
-  "colour": 225
+  "colour": CustomPurple
 },
 {
   "type": "_4vector",
@@ -1247,7 +1235,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
     }
   ],
   "output": null,
-  "colour": 225
+  "colour": CustomPurple
 },
 {
   "type": "number",
@@ -1266,7 +1254,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
     }
   ],
   "output": null,
-  "colour": 225
+  "colour": CustomPurple
 },
 {
   "type": "messageCommand",
@@ -1325,6 +1313,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
     }
   ],
   "output": null,
-  "colour": 180
+  "colour": CustomCyan
 }
 ]);
+
