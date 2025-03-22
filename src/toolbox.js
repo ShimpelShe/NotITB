@@ -179,7 +179,7 @@ export const toolbox = {
       'type': 'gsSetSongX',
       'inputs': {
         'label': {
-          'block': {
+          'shadow': {
             'type': 'number',
             'fields': {
               'num': 10
@@ -231,7 +231,7 @@ export const toolbox = {
       'type': 'selfTween',
       'inputs': {
         'TweenNum': {
-          'block': {
+          'shadow': {
             'type': 'number',
             'fields': {
               'num': 1
@@ -245,7 +245,7 @@ export const toolbox = {
       'type': 'selfXY',
       'inputs': {
         'Value': {
-          'block': {
+          'shadow': {
             'type': 'number'
           },
         },
@@ -256,7 +256,7 @@ export const toolbox = {
       'type': 'selfZoomto',
       'inputs': {
         'ZoomTo': {
-          'block': {
+          'shadow': {
             'type': '_2vector',
             'fields': {
               'val1': 200,
@@ -271,7 +271,7 @@ export const toolbox = {
       'type': 'selfDiffuse',
       'inputs': {
         'RGBA': {
-          'block': {
+          'shadow': {
             'type': '_4vector',
             'fields': {
               'val1': 1,
@@ -300,7 +300,7 @@ export const toolbox = {
       'type': 'selfBlend',
       'inputs': {
         'Blend': {
-          'block': {
+          'shadow': {
             'type': 'number',
             'fields': {
               'num': 1
@@ -340,7 +340,7 @@ export const toolbox = {
       'type': 'changeCentering',
       'inputs': {
         'Centering': {
-          'block': {
+          'shadow': {
             'type': '_4vector',
             'fields': {
               'val1': 5,
