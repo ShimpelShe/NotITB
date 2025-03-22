@@ -1314,6 +1314,21 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([
   ],
   "output": null,
   "colour": CustomCyan
+},
+{
+  "type": "changeCentering",
+  "tooltip": "",
+  "helpUrl": "",
+  "message0": "Change Centering %1",
+  "args0": [
+    {
+      "type": "input_value",
+      "name": "Centering"
+    }
+  ],
+  "output": null,
+  "colour": CustomYellow
 }
+                    
 ]);
 

@@ -318,7 +318,7 @@ export const toolbox = {
 {
   'kind': 'category',
   'name': 'Display',
-  'colour': CustomCyan,
+  'colour': CustomYellow,
   'contents': [
     {
       'kind': 'block',
@@ -334,6 +334,23 @@ export const toolbox = {
     {
       'kind': 'block',
       'type': 'rageDisplay'
+    },
+    {
+      'kind': 'block',
+      'type': 'changeCentering',
+      'inputs': {
+        'Centering': {
+          'block': {
+            'type': '_4vector',
+            'fields': {
+              'val1': 5,
+              'val2': 10,
+              'val3': -5,
+              'val4': -10
+            },
+          },
+        },
+      }
     },
   ]
 },

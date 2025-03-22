@@ -410,4 +410,11 @@ nitgGenerator.forBlock['rageDisplay'] = function(block, generator) {
   
   const code = 'DISPLAY:' + value_value;
   return [code, Order.ATOMIC];
+};
+
+nitgGenerator.forBlock['changeCentering'] = function(block, generator) {
+  const value_centering = generator.valueToCode(block, 'Centering', Order.ATOMIC);
+
+  const code = 'ChangeCentering(' + value_centering + ')';
+  return [code, Order.ATOMIC];
 }
