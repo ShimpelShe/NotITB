@@ -5,11 +5,23 @@
  */
 
 import * as Blockly from 'blockly';
+
 import {blocks} from './blocks/nitgblocks';
 import {nitgGenerator} from './generators/nitgen';
 import {save, load} from './serialization';
 import {toolbox} from './toolbox';
 import './index.css';
+
+//import plugins
+
+import {shadowBlockConversionChangeListener} from '@blockly/shadow-block-converter';
+import {Backpack} from '@blockly/workspace-backpack';
+import {ZoomToFitControl} from '@blockly/zoom-to-fit';
+import {
+  ScrollOptions,
+  ScrollBlockDragger,
+  ScrollMetricsManager,
+} from '@blockly/plugin-scroll-options';
 
 // Register the blocks and generator with Blockly
 Blockly.common.defineBlocks(blocks);
@@ -25,7 +37,7 @@ const ws = Blockly.inject(blocklyDiv, {toolbox,
        snap: true},
   trashcan: true,
   zoom:
-         {controls: true,
+         {controls: true, 
           wheel: true,
           startScale: 1.0,
           maxScale: 3,
@@ -33,7 +45,34 @@ const ws = Blockly.inject(blocklyDiv, {toolbox,
           scaleSpeed: 1.2,
           pinch: true},
   renderer: 'thrasos',
+  plugins: {
+    blockDragger: ScrollBlockDragger,
+    metricsManager: ScrollMetricsManager,
+  },
 });
+
+// Start ze plugins :3
+
+ws.addChangeListener(shadowBlockConversionChangeListener);
+
+const backpackOptions = {
+  allowEmptyBackpackOpen: false,
+  useFilledBackpackImage: true,
+  contextMenu: {
+    emptyBackpack: true,
+    removeFromBackpack: true,
+    copyToBackpack: false,
+  },
+};
+
+const backpack = new Backpack(ws, backpackOptions);
+backpack.init();
+
+const zoomToFit = new ZoomToFitControl(ws);
+zoomToFit.init();
+
+const scroller = new ScrollOptions(ws);
+scroller.init();
 
 // This function resets the code div and shows the
 // generated code from the workspace.

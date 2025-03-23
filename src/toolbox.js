@@ -190,7 +190,21 @@ export const toolbox = {
     },
     {
       'kind': 'block',
-      'type': 'Mod'
+      'type': 'Mod',
+      'inputs': {
+        'MOD': {
+          'shadow': {
+            'type': 'freeuse_text',
+            'fields': {
+              'TXT': 'drunk'
+            }
+          },
+        },
+      },
+    },
+    {
+      'kind': 'block',
+      'type': 'modSelector'
     },
   ]
 },

@@ -103,3 +103,33 @@ code {
   scale: 0.98;
   transition-duration: 50ms;
 }
+
+#copyButton {
+  background-color: #e79449;
+  border: solid;
+  border-style: none solid solid none;
+  border-color: #00000020;
+  color: white;
+  padding: 4px 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 2px 1px;
+  cursor: pointer;
+  border-radius: 5px;
+  scale: 0;
+  transition-duration: 100ms;
+}
+
+#copyButton:hover {
+  background-color: #f7a459;
+  scale: 1;
+  transition-duration: 100ms;
+}
+
+#copyButton:active {
+  background-color: #d77439;
+  border-style: solid none none solid;
+  scale: 0.98;
+  transition-duration: 50ms;
+}

@@ -24,6 +24,11 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
+    "@blockly/plugin-scroll-options": "^6.0.12",
+    "@blockly/shadow-block-converter": "^6.0.13",
+    "@blockly/workspace-backpack": "^6.0.12",
+    "@blockly/workspace-minimap": "^0.2.12",
+    "@blockly/zoom-to-fit": "^6.0.12",
     "blockly": "^11.0.0"
   }
 }

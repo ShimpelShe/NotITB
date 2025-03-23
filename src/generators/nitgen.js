@@ -192,13 +192,13 @@ nitgGenerator.forBlock['ApplyModifiers'] = function(block, generator) {
 };
 
 nitgGenerator.forBlock['Mod'] = function(block, generator) {
-  const text_mod = block.getFieldValue('MOD');
   const number_speed = block.getFieldValue('SPEED');
   const number_amp = block.getFieldValue('AMP');
 
+  const value_mod = generator.valueToCode(block, 'MOD', Order.ATOMIC);
   const value_arguments = generator.valueToCode(block, 'ARGUMENTS', Order.ATOMIC);
 
-  const code = '*' + number_speed + ' ' + number_amp + ' ' + text_mod + ',' + value_arguments;
+  const code = '*' + number_speed + ' ' + number_amp + ' ' + value_mod + ',' + value_arguments;
   return [code, Order.ATOMIC];
 };
 
@@ -441,7 +441,7 @@ nitgGenerator.forBlock['getFPS'] = function(block, generator) {
 
   const code = 'GetFPS()';
   return [code, Order.ATOMIC];
-}
+};
 
 nitgGenerator.forBlock['getDisplayHeight'] = function(block, generator) {
 
@@ -452,5 +452,12 @@ nitgGenerator.forBlock['getDisplayHeight'] = function(block, generator) {
 nitgGenerator.forBlock['getDisplayWidth'] = function(block, generator) {
 
   const code = 'GetDisplayWidth()';
+  return [code, Order.ATOMIC];
+};
+
+nitgGenerator.forBlock['modSelector'] = function(block, generator) {
+  const dropdown_modlist = block.getFieldValue('modlist');
+
+  const code = dropdown_modlist;
   return [code, Order.ATOMIC];
 }
