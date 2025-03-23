@@ -225,7 +225,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([
       "options": [
         [
           "Global",
-          "var"
+          "global"
         ],
         [
           "Local",
@@ -1038,11 +1038,11 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([
       "options": [
         [
           "Beat",
-          "beat"
+          "Beat"
         ],
         [
           "Time",
-          "time"
+          "Time"
         ]
       ]
     },
@@ -1085,11 +1085,11 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([
       "options": [
         [
           "Beat",
-          "beat"
+          "Beat"
         ],
         [
           "Position",
-          "position"
+          "Position"
         ]
       ]
     },

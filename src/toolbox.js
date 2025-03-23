@@ -345,8 +345,8 @@ export const toolbox = {
             'fields': {
               'val1': 5,
               'val2': 10,
-              'val3': -5,
-              'val4': -10
+              'val3': -10,
+              'val4': -20
             },
           },
         },

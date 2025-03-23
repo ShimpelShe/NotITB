@@ -74,3 +74,45 @@ Note to self: Actual colors in nitgblocks.js
 Pointer Variables in both nitgen.js and nitgblocks.js
 
 */
+
+// down here is the 10000th time AI has saved my lazy ### from coding things i don't know :3
+
+document.getElementById('saveButton').addEventListener('click', () => {
+  const state = Blockly.serialization.workspaces.save(ws);
+  const blockState = {
+    blocks: state.blocks,
+  };
+  const blob = new Blob([JSON.stringify(blockState)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'blocks.json';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+});
+
+document.getElementById('loadButton').addEventListener('click', () => {
+  const input = document.createElement('input');
+  input.type = 'file';
+  input.accept = '.json';
+
+  input.addEventListener('change', (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        try {
+          const jsonData = JSON.parse(e.target.result);
+          Blockly.serialization.workspaces.load(jsonData, ws);
+        } catch (error) {
+          console.error('Error loading or parsing JSON:', error);
+        }
+      };
+      reader.readAsText(file);
+    }
+  });
+
+  input.click(); // Trigger the file selection dialog
+});

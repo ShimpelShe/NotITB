@@ -100,7 +100,13 @@ nitgGenerator.forBlock['VARSET'] = function(block, generator) {
   const text_var = block.getFieldValue('VAR');
   const value_varset = generator.valueToCode(block, 'VARSET', Order.ATOMIC);
 
-  const code = dropdown_vartype + ' ' + text_var + ' = ' + value_varset;
+  if (dropdown_vartype === 'global') {
+    var vartype = '';
+  } else {
+    var vartype = 'local';
+  }
+
+  const code = vartype + ' ' + text_var + ' = ' + value_varset;
   return code
 };
 
@@ -311,7 +317,7 @@ nitgGenerator.forBlock['finishSong'] = function(block, generator) {
 
 nitgGenerator.forBlock['gamestateBPX'] = function(block, generator) {
 
-  const code = 'getcurbps()';
+  const code = 'GetCurBps()';
   return [code, Order.ATOMIC];
 };
 
@@ -320,17 +326,17 @@ nitgGenerator.forBlock['gsGetsongX'] = function(block, generator) {
   const checkbox_vis = block.getFieldValue('vis');
   
   if (checkbox_vis === 'TRUE') {
-    var gsgsongvis = 'visible';
+    var gsgsongvis = 'Visible';
   } else if (checkbox_vis === 'FALSE') {
     var gsgsongvis = '';
   }
 
-  const code = 'getsong' + dropdown_type + gsgsongvis + '()';
+  const code = 'GetSong' + dropdown_type + gsgsongvis + '()';
   return [code, Order.ATOMIC];
 };
 
 nitgGenerator.forBlock['gsReloadSteps'] = function(block, generator) {
-  const code = 'reloadsteps()';
+  const code = 'ReloadSteps()';
   return [code, Order.ATOMIC];
 };
 
@@ -338,7 +344,7 @@ nitgGenerator.forBlock['gsSetSongX'] = function(block, generator) {
   const dropdown_name = block.getFieldValue('NAME');
   const value_label = generator.valueToCode(block, 'label', Order.ATOMIC);
 
-  const code = 'setsong' + dropdown_name + '(' + value_label + ')';
+  const code = 'SetSong' + dropdown_name + '(' + value_label + ')';
   return [code, Order.ATOMIC];
 };
 
@@ -386,7 +392,13 @@ nitgGenerator.forBlock['_4vector'] = function(block, generator) {
 nitgGenerator.forBlock['number'] = function(block, generator) {
   const number_num = block.getFieldValue('num');
 
-  const code = number_num;
+  if (number_num === 0) {
+    var num = '0';
+  } else {
+    var num = number_num;
+  }
+
+  const code = num;
   return [code, Order.ATOMIC];
 };
 

@@ -43,3 +43,63 @@ code {
 #output {
   height: 50%;
 }
+
+#saveButton {
+  background-color: #4CAF50;
+  border: solid;
+  border-style: none solid solid none;
+  border-color: #00000020;
+  color: white;
+  padding: 4px 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 2px 1px;
+  cursor: pointer;
+  border-radius: 5px;
+  scale: 0.99;
+  transition-duration: 100ms;
+}
+
+#saveButton:hover {
+  background-color: #5CbF60;
+  scale: 1;
+  transition-duration: 100ms;
+}
+
+#saveButton:active {
+  background-color: #3C9F40;
+  border-style: solid none none solid;
+  scale: 0.98;
+  transition-duration: 50ms;
+}
+
+#loadButton {
+  background-color: #377BD4;
+  border: solid;
+  border-style: none solid solid none;
+  border-color: #00000020;
+  color: white;
+  padding: 4px 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 2px 1px;
+  cursor: pointer;
+  border-radius: 5px;
+  scale: 0.99;
+  transition-duration: 100ms;
+}
+
+#loadButton:hover {
+  background-color: #478BE4;
+  scale: 1;
+  transition-duration: 100ms;
+}
+
+#loadButton:active {
+  background-color: #276BC4;
+  border-style: solid none none solid;
+  scale: 0.98;
+  transition-duration: 50ms;
+}
