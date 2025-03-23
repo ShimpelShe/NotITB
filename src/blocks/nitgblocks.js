@@ -1328,7 +1328,62 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([
   ],
   "output": null,
   "colour": CustomYellow
+},
+{
+  "type": "getCFPS",
+  "tooltip": "It would've been better if they didn't shorten it..",
+  "helpUrl": "",
+  "message0": "Get Cumulative FPS %1",
+  "args0": [
+    {
+      "type": "input_end_row",
+      "name": "label"
+    }
+  ],
+  "output": null,
+  "colour": CustomYellow
+},
+{
+  "type": "getFPS",
+  "tooltip": "",
+  "helpUrl": "",
+  "message0": "Get FPS %1",
+  "args0": [
+    {
+      "type": "input_end_row",
+      "name": "label"
+    }
+  ],
+  "output": null,
+  "colour": CustomYellow
+},
+{
+  "type": "getDisplayHeight",
+  "tooltip": "",
+  "helpUrl": "",
+  "message0": "Get Display Width %1",
+  "args0": [
+    {
+      "type": "input_end_row",
+      "name": "label"
+    }
+  ],
+  "output": null,
+  "colour": CustomYellow
+},
+{
+  "type": "getDisplayWidth",
+  "tooltip": "",
+  "helpUrl": "",
+  "message0": "Get Display Width %1",
+  "args0": [
+    {
+      "type": "input_end_row",
+      "name": "label"
+    }
+  ],
+  "output": null,
+  "colour": CustomYellow
 }
-                    
 ]);
 

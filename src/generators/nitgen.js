@@ -429,4 +429,28 @@ nitgGenerator.forBlock['changeCentering'] = function(block, generator) {
 
   const code = 'ChangeCentering(' + value_centering + ')';
   return [code, Order.ATOMIC];
+};
+
+nitgGenerator.forBlock['getCFPS'] = function(block, generator) {
+
+  const code = 'GetCumFps()';
+  return [code, Order.ATOMIC];
+};
+
+nitgGenerator.forBlock['getFPS'] = function(block, generator) {
+
+  const code = 'GetFPS()';
+  return [code, Order.ATOMIC];
+}
+
+nitgGenerator.forBlock['getDisplayHeight'] = function(block, generator) {
+
+  const code = 'GetDisplayHeight()';
+  return [code, Order.ATOMIC];
+};
+
+nitgGenerator.forBlock['getDisplayWidth'] = function(block, generator) {
+
+  const code = 'GetDisplayWidth()';
+  return [code, Order.ATOMIC];
 }

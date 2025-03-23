@@ -164,10 +164,6 @@ export const toolbox = {
     },
     {
       'kind': 'block',
-      'type': 'gamestateBPX'
-    },
-    {
-      'kind': 'block',
       'type': 'gsGetsongX'
     },
     {
@@ -351,6 +347,22 @@ export const toolbox = {
           },
         },
       }
+    },
+    {
+      'kind': 'block',
+      'type': 'getCFPS'
+    },
+    {
+      'kind': 'block',
+      'type': 'getFPS'
+    },
+    {
+      'kind': 'block',
+      'type': 'getDisplayHeight'
+    },
+    {
+      'kind': 'block',
+      'type': 'getDisplayWidth'
     },
   ]
 },
