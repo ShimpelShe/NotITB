@@ -155,3 +155,42 @@ document.getElementById('loadButton').addEventListener('click', () => {
 
   input.click(); // Trigger the file selection dialog
 });
+
+document.getElementById('copyButton').addEventListener('click', () => {
+  // Get the code element (the <code> inside the <pre>)
+  const codeElement = document.getElementById('generatedCode').firstChild;
+  
+  if (!codeElement) {
+    console.error('Code element not found.');
+    return;
+  }
+  
+  // Extract text content, preserving any line breaks
+  let textContent = '';
+  for (const node of codeElement.childNodes) {
+    if (node.nodeType === Node.TEXT_NODE) {
+      textContent += node.textContent;
+    } else if (node.nodeName === 'BR') {
+      textContent += '\n';
+    }
+  }
+  
+  // Create a blob with the text content
+  const blob = new Blob([textContent], { type: 'text/xml' });
+  
+  // Create a URL for the blob
+  const url = URL.createObjectURL(blob);
+  
+  // Create a temporary anchor element to trigger the download
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'modfile.xml'; // Set the filename for the download
+  
+  // Append to the body, click to download, then remove
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  
+  // Clean up by revoking the URL
+  URL.revokeObjectURL(url);
+});
