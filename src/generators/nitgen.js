@@ -1,15 +1,5 @@
 import * as Blockly from 'blockly';
 
-// Color variables here too to stop whining (in case of)
-
-var CustomRed = '%{BKY_CRED}'
-var CustomBlue = '%{BKY_CBLU}'
-var CustomCyan = '%{BKY_CCYA}'
-var CustomPurple = '%{BKY_CPUR}'
-var CustomPink = '%{BKY_CPNK}'
-var CustomYellow = '%{BKY_CYLW}'
-var CustomGreen = '%{BKY_CGRN}'
-
 // Blocks Down Below
 
 export const nitgGenerator = new Blockly.Generator('NITG');

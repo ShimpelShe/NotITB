@@ -11,6 +11,7 @@ import {nitgGenerator} from './generators/nitgen';
 import {save, load} from './serialization';
 import {toolbox} from './toolbox';
 import './index.css';
+import './renderers/NotITB';
 
 //import plugins
 
@@ -44,7 +45,7 @@ const ws = Blockly.inject(blocklyDiv, {toolbox,
           minScale: 0.3,
           scaleSpeed: 1.2,
           pinch: true},
-  renderer: 'thrasos',
+  renderer: 'NotITB',
   plugins: {
     blockDragger: ScrollBlockDragger,
     metricsManager: ScrollMetricsManager,
