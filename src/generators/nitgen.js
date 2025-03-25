@@ -18,7 +18,6 @@ nitgGenerator.scrub_ = function(block, code, thisOnly) {
 
 nitgGenerator.forBlock['ActorFrame'] = function(block, generator) {
   const statement_actorframe = generator.statementToCode(block, 'ACTORFRAME');
-  block.setColour(CustomRed)
 
   const code = '<ActorFrame><children>\n' + statement_actorframe + '\n</children></ActorFrame>';
   return code;
