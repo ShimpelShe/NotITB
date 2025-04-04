@@ -12,15 +12,7 @@ your toolbox from scratch, or carefully choosing whether you need each block
 listed here.
 */
 
-// Color vars here too to avoid explosion
-
-var CustomRed = '%{BKY_CRED}'
-var CustomBlue = '%{BKY_CBLU}'
-var CustomCyan = '%{BKY_CCYA}'
-var CustomPurple = '%{BKY_CPUR}'
-var CustomPink = '%{BKY_CPNK}'
-var CustomYellow = '%{BKY_CYLW}'
-var CustomGreen = '%{BKY_CGRN}'
+import {MColors}  from './MColors';
 
 export const toolbox = {
   'kind': 'categoryToolbox',
@@ -28,7 +20,7 @@ export const toolbox = {
 	{
 	'kind': 'category',
 	'name': 'Layout',
-	'colour': CustomBlue,
+	'colour': MColors.blue,
 	'contents': [
 {
       'kind': 'block',
@@ -67,7 +59,7 @@ export const toolbox = {
 {
 	'kind': 'category',
 	'name': 'Flow',
-	'colour': CustomYellow,
+	'colour': MColors.yellow,
 	'contents': [
     {
       'kind': 'block',
@@ -98,7 +90,7 @@ export const toolbox = {
 {
 	'kind': 'category',
 	'name': 'Values and Strings',
-	'colour': CustomGreen,
+	'colour': MColors.green,
   'contents': [
     {
       'kind': 'block',
@@ -141,7 +133,7 @@ export const toolbox = {
 {
 	'kind': 'category',
 	'name': 'Gamestate',
-	'colour': CustomRed,
+	'colour': MColors.red,
 	'contents': [
     {
       'kind': 'block',
@@ -211,7 +203,7 @@ export const toolbox = {
 {
 	'kind': 'category',
 	'name': 'Self',
-	'colour': CustomPurple,
+	'colour': MColors.purple,
 	'contents': [
     {
       'kind': 'block',
@@ -328,7 +320,7 @@ export const toolbox = {
 {
   'kind': 'category',
   'name': 'Display',
-  'colour': CustomYellow,
+  'colour': MColors.yellow,
   'contents': [
     {
       'kind': 'block',
@@ -383,7 +375,7 @@ export const toolbox = {
 {
   'kind': 'category',
   'name': 'User Custom',
-  'colour': CustomRed,
+  'colour': MColors.red,
   'contents': [
     {
       'kind': 'block',
