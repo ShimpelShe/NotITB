@@ -15,14 +15,14 @@ import './renderers/NotITB';
 
 //import plugins
 
-import {shadowBlockConversionChangeListener} from '@blockly/shadow-block-converter';
-import {Backpack} from '@blockly/workspace-backpack';
-import {ZoomToFitControl} from '@blockly/zoom-to-fit';
+import {shadowBlockConversionChangeListener} from './node_modules/@blockly/shadow-block-converter';
+import {Backpack} from './node_modules/@blockly/workspace-backpack';
+import {ZoomToFitControl} from './node_modules/@blockly/zoom-to-fit';
 import {
   ScrollOptions,
   ScrollBlockDragger,
   ScrollMetricsManager,
-} from '@blockly/plugin-scroll-options';
+} from './node_modules/@blockly/plugin-scroll-options';
 
 // Register the blocks and generator with Blockly
 Blockly.common.defineBlocks(blocks);
