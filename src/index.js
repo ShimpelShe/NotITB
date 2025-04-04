@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import * as Blockly from './node_modules/blockly';
+import * as Blockly from 'blockly';
 
 import {blocks} from './blocks/nitgblocks';
 import {nitgGenerator} from './generators/nitgen';
@@ -15,14 +15,14 @@ import './renderers/NotITB';
 
 //import plugins
 
-import {shadowBlockConversionChangeListener} from './node_modules/@blockly/shadow-block-converter';
-import {Backpack} from './node_modules/@blockly/workspace-backpack';
-import {ZoomToFitControl} from './node_modules/@blockly/zoom-to-fit';
+import {shadowBlockConversionChangeListener} from '@blockly/shadow-block-converter';
+import {Backpack} from '@blockly/workspace-backpack';
+import {ZoomToFitControl} from '@blockly/zoom-to-fit';
 import {
   ScrollOptions,
   ScrollBlockDragger,
   ScrollMetricsManager,
-} from './node_modules/@blockly/plugin-scroll-options';
+} from '@blockly/plugin-scroll-options';
 
 // Register the blocks and generator with Blockly
 Blockly.common.defineBlocks(blocks);
