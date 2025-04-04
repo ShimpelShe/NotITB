@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import * as Blockly from 'blockly';
+import * as Blockly from './node_modules/blockly';
 
 import {blocks} from './blocks/nitgblocks';
 import {nitgGenerator} from './generators/nitgen';
