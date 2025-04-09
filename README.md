@@ -33,5 +33,5 @@ Not that i'm regretting it, i prefer clicking blocks together than to read a wik
 
 This was made possible thanks to the help of the following people below!
 
-Maribeth  
-Mark
+- Maribeth
+- Mark
