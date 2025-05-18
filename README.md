@@ -27,7 +27,8 @@ If there's an uninstalled dependency.. Just search how to download it online dud
 
 I know i know, it's easier and more intuitive and stuff. And i have no excuse, i just didn't know about it when starting and.. well, yeah
 
-Not that i'm regretting it, i prefer clicking blocks together than to read a wiki every time i need to do something ( Lazyness )
+Not that i'm regretting it, i prefer clicking blocks together than to read a wiki every time i need to do something  
+(I'm Lazy)
 
 ## Thanks!
 
