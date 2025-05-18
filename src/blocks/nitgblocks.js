@@ -674,15 +674,27 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([
         ],
         [
           "Rotation X",
-          "rotx"
+          "rotationx"
         ],
         [
           "Rotation Y",
-          "roty"
+          "rotationy"
         ],
         [
           "Rotation Z",
-          "rotz"
+          "rotationz"
+        ],
+        [
+          "Add Rotation X",
+          "addrotationx"
+        ],
+        [
+          "Add Rotation Y",
+          "addrotationy"
+        ],
+        [
+          "Add Rotation Z",
+          "addrotationz"
         ],
         [
           "Skew X",
@@ -938,11 +950,11 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([
       "options": [
         [
           "Set",
-          "setname"
+          "SetName"
         ],
         [
           "Get",
-          "getname"
+          "GetName"
         ]
       ]
     },
@@ -996,8 +1008,22 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([
   "type": "gamestateBPX",
   "tooltip": "",
   "helpUrl": "",
-  "message0": "Get Beats Per Second %1",
+  "message0": "Get Beats Per %1 %2",
   "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "type",
+      "options": [
+        [
+          "Minute",
+          "M"
+        ],
+        [
+          "Second",
+          "S"
+        ]
+      ]
+    },
     {
       "type": "input_end_row",
       "name": "label"

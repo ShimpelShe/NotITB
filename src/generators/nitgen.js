@@ -286,7 +286,13 @@ nitgGenerator.forBlock['actorNames'] = function(block, generator) {
   const dropdown_type = block.getFieldValue('TYPE');
   const text_name = block.getFieldValue('NAME');
 
-  const code = dropdown_type + '(' + text_name + ')';
+  if (dropdown_type === 'SetName') {
+    var actorname_text = text_name
+  } else {
+    var actorname_text = ''
+  }
+
+  const code = dropdown_type + '(' + actorname_text + ')';
   return [code, Order.ATOMIC];
 };
 
@@ -300,13 +306,14 @@ nitgGenerator.forBlock['actor'] = function(block, generator) {
 
 nitgGenerator.forBlock['finishSong'] = function(block, generator) {
 
-  const code = 'finishsong()';
+  const code = 'FinishSong()';
   return [code, Order.ATOMIC];
 };
 
 nitgGenerator.forBlock['gamestateBPX'] = function(block, generator) {
+  const dropdown_type = block.getFieldValue('type');
 
-  const code = 'GetCurBps()';
+  const code = 'GetCurBP' + dropdown_type + '()';
   return [code, Order.ATOMIC];
 };
 
@@ -372,7 +379,7 @@ nitgGenerator.forBlock['_4vector'] = function(block, generator) {
   const number_val1 = block.getFieldValue('val1');
   const number_val2 = block.getFieldValue('val2');
   const number_val3 = block.getFieldValue('val3');
-  const number_val4 = block.getFieldValue('val3');
+  const number_val4 = block.getFieldValue('val4');
 
   const code = number_val1 + ', ' + number_val2 + ', ' + number_val3 + ', ' + number_val4;
   return [code, Order.ATOMIC];

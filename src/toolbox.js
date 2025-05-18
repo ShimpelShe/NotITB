@@ -156,6 +156,10 @@ export const toolbox = {
     },
     {
       'kind': 'block',
+      'type': 'gamestateBPX'
+    },
+    {
+      'kind': 'block',
       'type': 'gsGetsongX'
     },
     {
