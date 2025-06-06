@@ -4,6 +4,6 @@ export const MColors = {
     green: '#6b7',
     blue: '#76b',
     cyan: '#5bb',
-    purple: '#86b',
+    purple: '#96b',
     pink: '#b6b'
   };
