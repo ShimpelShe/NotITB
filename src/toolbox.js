@@ -378,6 +378,12 @@ export const toolbox = {
 },
 {
   'kind': 'category',
+  'name': 'Variables',
+  'colour': MColors.cyan,
+  'custom': 'VARIABLE'
+},
+{
+  'kind': 'category',
   'name': 'User Custom',
   'colour': MColors.red,
   'contents': [

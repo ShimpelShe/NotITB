@@ -225,7 +225,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([
   ],
   "previousStatement": null,
   "nextStatement": null,
-  "colour": MColors.green
+  "colour": MColors.cyan
 },
 {
   "type": "GameState",
