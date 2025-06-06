@@ -1126,7 +1126,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([
   ],
   "previousStatement": null,
   "nextStatement": null,
-  "colour": 270
+  "colour": MColors.purple
 },
 {
   "type": "screenCenterXY",
@@ -1284,7 +1284,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([
   ],
   "previousStatement": null,
   "nextStatement": null,
-  "colour": 270
+  "colour": MColors.purple
 },
 {
   "type": "messageBroadcast",
@@ -1304,7 +1304,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([
   ],
   "previousStatement": null,
   "nextStatement": null,
-  "colour": 270
+  "colour": MColors.purple
 },
 {
   "type": "rageDisplay",

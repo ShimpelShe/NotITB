@@ -1,0 +1,5 @@
+To do:
+
+-Change some blocks to be more "Modular"
+-Fix unnecessary jank
+-Change categories from "self" and "gamestate" to "actors" and "singletons"
