@@ -3,5 +3,6 @@ To do:
 - Change some blocks to be more "Modular"
 - Fix unnecessary jank
 - Re-add equality and basic operations
+- Proper list block w/ mutators?
 - Replace the "Type:[thing]" & "File:[thing]" blocks by a singular "[attribute]:[thing]"
-- Upgrade function block
+- Update function block
