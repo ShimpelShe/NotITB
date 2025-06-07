@@ -242,34 +242,6 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([
   "colour": MColors.cyan
 },
 {
-  "type": "JoinBlock",
-  "tooltip": "",
-  "helpUrl": "",
-  "message0": "Join %1 With %2 Space between? %3 %4",
-  "args0": [
-    {
-      "type": "input_value",
-      "name": "Join"
-    },
-    {
-      "type": "input_value",
-      "name": "With"
-    },
-    {
-      "type": "field_checkbox",
-      "name": "Space",
-      "checked": "FALSE"
-    },
-    {
-      "type": "input_dummy",
-      "name": "NAME"
-    }
-  ],
-  "output": null,
-  "colour": MColors.green,
-  "inputsInline": true
-},
-{
   "type": "DO",
   "tooltip": "",
   "helpUrl": "",
@@ -283,88 +255,6 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([
   "previousStatement": null,
   "nextStatement": null,
   "colour": MColors.yellow
-},
-{
-  "type": "Operation",
-  "tooltip": "",
-  "helpUrl": "",
-  "message0": "%1 %2 %3 %4",
-  "args0": [
-    {
-      "type": "field_input",
-      "name": "Arg1",
-      "text": "Value 1"
-    },
-    {
-      "type": "field_dropdown",
-      "name": "Sign",
-      "options": [
-        [
-          "+",
-          "+"
-        ],
-        [
-          "-",
-          "-"
-        ],
-        [
-          "/",
-          "/"
-        ],
-        [
-          "*",
-          "*"
-        ],
-        [
-          "^",
-          "^"
-        ],
-        [
-          "and",
-          "and"
-        ],
-        [
-          "not",
-          "not"
-        ],
-        [
-          ">",
-          ">"
-        ],
-        [
-          ">=",
-          ">="
-        ],
-        [
-          "~=",
-          "~="
-        ],
-        [
-          "==",
-          "=="
-        ],
-        [
-          "<=",
-          "<="
-        ],
-        [
-          "<",
-          "<"
-        ],
-      ]
-    },
-    {
-      "type": "field_input",
-      "name": "Arg2",
-      "text": "Value 2"
-    },
-    {
-      "type": "input_dummy",
-      "name": "EqualityDo"
-    }
-  ],
-  "output": null,
-  "colour": MColors.green
 },
 {
   "type": "SELF",
@@ -1310,7 +1200,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([
   "type": "rageDisplay",
   "tooltip": "",
   "helpUrl": "",
-  "message0": "Display %1",
+  "message0": "Display: %1",
   "args0": [
     {
       "type": "input_value",

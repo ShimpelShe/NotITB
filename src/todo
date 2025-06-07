@@ -1,5 +1,7 @@
 To do:
 
--Change some blocks to be more "Modular"
--Fix unnecessary jank
--Change categories from "self" and "gamestate" to "actors" and "singletons"
+- Change some blocks to be more "Modular"
+- Fix unnecessary jank
+- Re-add equality and basic operations
+- Replace the "Type:[thing]" & "File:[thing]" blocks by a singular "[attribute]:[thing]"
+- Upgrade function block

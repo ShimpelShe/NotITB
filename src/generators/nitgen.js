@@ -106,39 +106,10 @@ nitgGenerator.forBlock['GameState'] = function(block, generator) {
   return [code, Order.ATOMIC];
 };
 
-nitgGenerator.forBlock['JoinBlock'] = function(block, generator) {
-
-  const value_join = generator.valueToCode(block, 'Join', Order.ATOMIC);
-
-  const value_with = generator.valueToCode(block, 'With', Order.ATOMIC);
-
-  const checkbox_space = block.getFieldValue('Space');
-
-  if (checkbox_space === 'TRUE') {
-    var endval_with = ' ' + value_with;
-  }
-
-  if (checkbox_space === 'FALSE') {
-    var endval_with = value_with;
-  }
-
-  const code = value_join + endval_with;
-  return [code, Order.ATOMIC];
-};
-
 nitgGenerator.forBlock['DO'] = function(block, generator) {
   const value_name = generator.valueToCode(block, 'NAME', Order.ATOMIC);
   const code = value_name;
   return code;
-};
-
-nitgGenerator.forBlock['Operation'] = function(block, generator) {
-  const text_arg1 = block.getFieldValue('Arg1');
-  const dropdown_sign = block.getFieldValue('Sign');
-  const text_arg2 = block.getFieldValue('Arg2');
-
-  const code = text_arg1 + ' ' + dropdown_sign + ' ' + text_arg2;
-  return [code, Order.ATOMIC];
 };
 
 nitgGenerator.forBlock['SELF'] = function(block, generator) {

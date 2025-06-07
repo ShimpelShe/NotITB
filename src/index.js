@@ -157,24 +157,10 @@ document.getElementById('loadButton').addEventListener('click', () => {
   input.click(); // Trigger the file selection dialog
 });
 
-document.getElementById('copyButton').addEventListener('click', () => {
-  // Get the code element (the <code> inside the <pre>)
-  const codeElement = document.getElementById('generatedCode').firstChild;
+document.getElementById('downButton').addEventListener('click', () => {
   
-  if (!codeElement) {
-    console.error('Code element not found.');
-    return;
-  }
-  
-  // Extract text content, preserving any line breaks
-  let textContent = '';
-  for (const node of codeElement.childNodes) {
-    if (node.nodeType === Node.TEXT_NODE) {
-      textContent += node.textContent;
-    } else if (node.nodeName === 'BR') {
-      textContent += '\n';
-    }
-  }
+  // Generate code
+  let textContent = nitgGenerator.workspaceToCode(ws);
   
   // Create a blob with the text content
   const blob = new Blob([textContent], { type: 'text/xml' });
@@ -194,4 +180,18 @@ document.getElementById('copyButton').addEventListener('click', () => {
   
   // Clean up by revoking the URL
   URL.revokeObjectURL(url);
+});
+
+document.getElementById('copyButton').addEventListener('click', () => {
+
+  // Generate code
+  let textContent = nitgGenerator.workspaceToCode(ws);
+
+  navigator.clipboard.writeText(textContent)
+    .then(() => {
+      console.log('Code copied to clipboard successfully!');
+    })
+    .catch(err => {
+      console.error('Failed to copy code: ', err);
+    });
 });

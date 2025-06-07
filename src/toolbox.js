@@ -12,7 +12,43 @@ your toolbox from scratch, or carefully choosing whether you need each block
 listed here.
 */
 
+// Y'know, what if we made each category a separate variable?
+
 import {MColors}  from './MColors';
+
+const Categories = { 
+  Flow: {
+    'kind': 'category',
+  	'name': 'Flow',
+  	'colour': MColors.yellow,
+  	'contents': [
+      {
+        'kind': 'block',
+        'type': 'IFDO'
+      },
+      {
+        'kind': 'block',
+        'type': 'IFDOELSE'
+      },
+      {
+        'kind': 'block',
+        'type': 'forDo'
+      },
+      {
+        'kind': 'block',
+        'type': 'DO'
+      },
+      {
+        'kind': 'block',
+        'type': 'repeatUntil'
+      },
+      {
+        'kind': 'block',
+        'type': 'whileDo'
+      },
+    ]
+  }
+};
 
 export const toolbox = {
   'kind': 'categoryToolbox',
@@ -22,7 +58,7 @@ export const toolbox = {
 	'name': 'Layout',
 	'colour': MColors.blue,
 	'contents': [
-{
+    {
       'kind': 'block',
       'type': 'ActorFrame'
     },
@@ -56,37 +92,7 @@ export const toolbox = {
     },
   ]
 },
-{
-	'kind': 'category',
-	'name': 'Flow',
-	'colour': MColors.yellow,
-	'contents': [
-    {
-      'kind': 'block',
-      'type': 'IFDO'
-    },
-    {
-      'kind': 'block',
-      'type': 'IFDOELSE'
-    },
-    {
-      'kind': 'block',
-      'type': 'forDo'
-    },
-    {
-      'kind': 'block',
-      'type': 'DO'
-    },
-    {
-      'kind': 'block',
-      'type': 'repeatUntil'
-    },
-    {
-      'kind': 'block',
-      'type': 'whileDo'
-    },
-  ]
-},
+Categories.Flow,
 {
 	'kind': 'category',
 	'name': 'Values and Strings',
@@ -95,14 +101,6 @@ export const toolbox = {
     {
       'kind': 'block',
       'type': 'VARSET'
-    },
-    {
-      'kind': 'block',
-      'type': 'Operation'
-    },
-    {
-      'kind': 'block',
-      'type': 'JoinBlock'
     },
     {
       'kind': 'block',
@@ -132,81 +130,7 @@ export const toolbox = {
 },
 {
 	'kind': 'category',
-	'name': 'Gamestate',
-	'colour': MColors.red,
-	'contents': [
-    {
-      'kind': 'block',
-      'type': 'DO',
-      'inputs': {
-        'NAME': {
-          'block': {
-            'type': 'GameState'
-          },
-        },
-      }
-    },
-    {
-      'kind': 'block',
-      'type': 'GameState'
-    },
-    {
-      'kind': 'block',
-      'type': 'finishSong'
-    },
-    {
-      'kind': 'block',
-      'type': 'gamestateBPX'
-    },
-    {
-      'kind': 'block',
-      'type': 'gsGetsongX'
-    },
-    {
-      'kind': 'block',
-      'type': 'gsReloadSteps'
-    },
-    {
-      'kind': 'block',
-      'type': 'gsSetSongX',
-      'inputs': {
-        'label': {
-          'shadow': {
-            'type': 'number',
-            'fields': {
-              'num': 10
-            },
-          },
-        },
-      }
-    },
-    {
-      'kind': 'block',
-      'type': 'ApplyModifiers'
-    },
-    {
-      'kind': 'block',
-      'type': 'Mod',
-      'inputs': {
-        'MOD': {
-          'shadow': {
-            'type': 'freeuse_text',
-            'fields': {
-              'TXT': 'drunk'
-            }
-          },
-        },
-      },
-    },
-    {
-      'kind': 'block',
-      'type': 'modSelector'
-    },
-  ]
-},
-{
-	'kind': 'category',
-	'name': 'Self',
+	'name': 'Actors',
 	'colour': MColors.purple,
 	'contents': [
     {
@@ -322,22 +246,78 @@ export const toolbox = {
   ]
 },
 {
-  'kind': 'category',
-  'name': 'Display',
-  'colour': MColors.yellow,
-  'contents': [
+	'kind': 'category',
+	'name': 'Singletons',
+	'colour': MColors.red,
+	'contents': [
     {
       'kind': 'block',
       'type': 'DO',
       'inputs': {
         'NAME': {
           'block': {
-            'type': 'rageDisplay'
+            'type': 'GameState'
           },
         },
       }
     },
     {
+      'kind': 'block',
+      'type': 'GameState'
+    },
+    {
+      'kind': 'block',
+      'type': 'finishSong'
+    },
+    {
+      'kind': 'block',
+      'type': 'gamestateBPX'
+    },
+    {
+      'kind': 'block',
+      'type': 'gsGetsongX'
+    },
+    {
+      'kind': 'block',
+      'type': 'gsReloadSteps'
+    },
+    {
+      'kind': 'block',
+      'type': 'gsSetSongX',
+      'inputs': {
+        'label': {
+          'shadow': {
+            'type': 'number',
+            'fields': {
+              'num': 10
+            },
+          },
+        },
+      }
+    },
+    {
+      'kind': 'block',
+      'type': 'ApplyModifiers'
+    },
+    {
+      'kind': 'block',
+      'type': 'Mod',
+      'inputs': {
+        'MOD': {
+          'shadow': {
+            'type': 'freeuse_text',
+            'fields': {
+              'TXT': 'drunk'
+            }
+          },
+        },
+      },
+    },
+    {
+      'kind': 'block',
+      'type': 'modSelector'
+    },
+        {
       'kind': 'block',
       'type': 'rageDisplay'
     },
