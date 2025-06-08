@@ -57,7 +57,7 @@ nitgGenerator.forBlock["IFDO"] = function (block, generator) {
   const value_if = generator.valueToCode(block, "IF", Order.ATOMIC);
   const statement_do = generator.statementToCode(block, "DO");
 
-  const code = "if " + value_if + " then\n" + statement_do + "\nend";
+  const code = "if (" + value_if + ") then\n" + statement_do + "\nend";
   return code;
 };
 
@@ -443,5 +443,105 @@ nitgGenerator.forBlock["modSelector"] = function (block, generator) {
   const dropdown_modlist = block.getFieldValue("modlist");
 
   const code = dropdown_modlist;
+  return [code, Order.ATOMIC];
+};
+
+nitgGenerator.forBlock["attribute"] = function (block, generator) {
+  const text_attribute_name = block.getFieldValue("attribute_name");
+  // TODO: change Order.ATOMIC to the correct operator precedence strength
+  const value_attribute = generator.valueToCode(
+    block,
+    "attribute",
+    Order.ATOMIC
+  );
+
+  const code = text_attribute_name + '="' + value_attribute + '"';
+  return code;
+};
+
+nitgGenerator.forBlock["arithmetic"] = function (block, generator) {
+  const value_val1 = generator.valueToCode(block, "Val1", Order.ATOMIC);
+
+  const dropdown_type = block.getFieldValue("Type");
+  const value_val2 = generator.valueToCode(block, "Val2", Order.ATOMIC);
+
+  if (dropdown_type == "PLUS") {
+    var operation = "+";
+  } else if (dropdown_type == "MINUS") {
+    var operation = "-";
+  } else if (dropdown_type == "MULT") {
+    var operation = "*";
+  } else if (dropdown_type == "DIVIS") {
+    var operation = "/";
+  } else if (dropdown_type == "EXPO") {
+    var operation = "^";
+  } else {
+    var operation = "?";
+  }
+
+  const code = value_val1 + " " + operation + " " + value_val2;
+  return [code, Order.ATOMIC];
+};
+
+nitgGenerator.forBlock["relational"] = function (block, generator) {
+  const value_val1 = generator.valueToCode(block, "Val1", Order.ATOMIC);
+
+  const dropdown_type = block.getFieldValue("Type");
+  const value_val2 = generator.valueToCode(block, "Val2", Order.ATOMIC);
+
+  if (dropdown_type == "EQ") {
+    var operation = "==";
+  } else if (dropdown_type == "NEQ") {
+    var operation = "~=";
+  } else if (dropdown_type == "BIG") {
+    var operation = ">";
+  } else if (dropdown_type == "SML") {
+    var operation = "<";
+  } else if (dropdown_type == "BIGEQ") {
+    var operation = ">=";
+  } else if (dropdown_type == "SMLEQ") {
+    var operation = "<=";
+  } else {
+    var operation = "?";
+  }
+
+  const code = value_val1 + " " + operation + " " + value_val2;
+  return [code, Order.ATOMIC];
+};
+
+nitgGenerator.forBlock["logical"] = function (block, generator) {
+  const value_val1 = generator.valueToCode(block, "Val1", Order.ATOMIC);
+
+  const dropdown_type = block.getFieldValue("Type");
+  const value_val2 = generator.valueToCode(block, "Val2", Order.ATOMIC);
+
+  if (dropdown_type == "A") {
+    var operation = "and";
+  } else if (dropdown_type == "O") {
+    var operation = "or";
+  } else {
+    var operation = "?";
+  }
+
+  const code = value_val1 + " " + operation + " " + value_val2;
+  return [code, Order.ATOMIC];
+};
+
+nitgGenerator.forBlock["not"] = function (block, generator) {
+  const value_val1 = generator.valueToCode(block, "Val1", Order.ATOMIC);
+
+  const code = "not " + value_val1;
+  return [code, Order.ATOMIC];
+};
+
+nitgGenerator.forBlock["concatenation"] = function (block, generator) {
+  const value_val1 = generator.valueToCode(block, "Val1", Order.ATOMIC);
+
+  const code = ".." + value_val1;
+  return [code, Order.ATOMIC];
+};
+
+nitgGenerator.forBlock["list"] = function (block, generator) {
+  const code = "...";
   return [code, Order.ATOMIC];
 };

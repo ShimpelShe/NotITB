@@ -12,6 +12,7 @@ your toolbox from scratch, or carefully choosing whether you need each block
 listed here.
 */
 
+import { inputs } from "blockly";
 import { MColors } from "./MColors";
 
 // Y'know, what if we made each category a separate variable in a table?
@@ -65,6 +66,20 @@ const Categories = {
       },
       {
         kind: "block",
+        type: "attribute",
+        inputs: {
+          attribute: {
+            block: {
+              type: "freeuse_text",
+              fields: {
+                TXT: "Quad",
+              },
+            },
+          },
+        },
+      },
+      {
+        kind: "block",
         type: "Command",
       },
       {
@@ -78,6 +93,16 @@ const Categories = {
       {
         kind: "block",
         type: "Function",
+        inputs: {
+          FUNCLABEL: {
+            block: {
+              type: "freeuse_text",
+              fields: {
+                TXT: "self",
+              },
+            },
+          },
+        },
       },
     ],
   },
@@ -93,6 +118,30 @@ const Categories = {
       {
         kind: "block",
         type: "freeuse_text",
+      },
+      {
+        kind: "block",
+        type: "list",
+      },
+      {
+        kind: "block",
+        type: "arithmetic",
+      },
+      {
+        kind: "block",
+        type: "relational",
+      },
+      {
+        kind: "block",
+        type: "logical",
+      },
+      {
+        kind: "block",
+        type: "not",
+      },
+      {
+        kind: "block",
+        type: "concatenation",
       },
       {
         kind: "block",

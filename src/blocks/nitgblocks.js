@@ -1,7 +1,7 @@
 import * as Blockly from "blockly";
 import { MColors } from "../MColors";
 
-// Colors now in MColors.js!
+// Colors now in MColors.js! (April 2025)
 
 // Blocks Down Below
 
@@ -296,7 +296,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([
     type: "ApplyModifiers",
     tooltip: "",
     helpUrl: "",
-    message0: "Apply Modifiers: %1 To Player: %2 %3",
+    message0: "Apply Modifiers %1 To %2 %3",
     args0: [
       {
         type: "input_value",
@@ -1427,4 +1427,153 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([
     output: null,
     colour: MColors.red,
   },
+  {
+    type: "attribute",
+    tooltip: "",
+    helpUrl: "",
+    message0: "Attribute %1 %2",
+    args0: [
+      {
+        type: "field_input",
+        name: "attribute_name",
+        text: "Type",
+      },
+      {
+        type: "input_value",
+        name: "attribute",
+      },
+    ],
+    previousStatement: null,
+    nextStatement: null,
+    colour: MColors.purple,
+  },
+  {
+    type: "arithmetic",
+    tooltip: "",
+    helpUrl: "",
+    message0: "%1 %2 %3",
+    args0: [
+      {
+        type: "input_value",
+        name: "Val1",
+      },
+      {
+        type: "field_dropdown",
+        name: "Type",
+        options: [
+          ["+", "PLUS"],
+          ["-", "MINUS"],
+          ["×", "MULT"],
+          ["/", "DIVIS"],
+          ["^", "EXPO"],
+        ],
+      },
+      {
+        type: "input_value",
+        name: "Val2",
+      },
+    ],
+    output: null,
+    colour: MColors.green,
+    inputsInline: true,
+  },
+  {
+    type: "relational",
+    tooltip: "",
+    helpUrl: "",
+    message0: "%1 %2 %3",
+    args0: [
+      {
+        type: "input_value",
+        name: "Val1",
+      },
+      {
+        type: "field_dropdown",
+        name: "Type",
+        options: [
+          ["=", "EQ"],
+          ["~=", "NEQ"],
+          [">", "BIG"],
+          ["<", "SML"],
+          [">=", "BIGEQ"],
+          ["<=", "SMLEQ"],
+        ],
+      },
+      {
+        type: "input_value",
+        name: "Val2",
+      },
+    ],
+    output: null,
+    colour: MColors.green,
+    inputsInline: true,
+  },
+  {
+    type: "logical",
+    tooltip: "",
+    helpUrl: "",
+    message0: "%1 %2 %3",
+    args0: [
+      {
+        type: "input_value",
+        name: "Val1",
+      },
+      {
+        type: "field_dropdown",
+        name: "Type",
+        options: [
+          ["And", "A"],
+          ["Or", "O"],
+        ],
+      },
+      {
+        type: "input_value",
+        name: "Val2",
+      },
+    ],
+    output: null,
+    colour: MColors.green,
+    inputsInline: true,
+  },
+  {
+    type: "not",
+    tooltip: "",
+    helpUrl: "",
+    message0: "Not %1",
+    args0: [
+      {
+        type: "input_value",
+        name: "Val1",
+      },
+    ],
+    output: null,
+    colour: MColors.green,
+  },
+  {
+    type: "concatenation",
+    tooltip: "string concatenation",
+    helpUrl: "",
+    message0: ".. %1",
+    args0: [
+      {
+        type: "input_value",
+        name: "Val1",
+      },
+    ],
+    output: null,
+    colour: MColors.green,
+    inputsInline: false,
+  },
 ]);
+
+const list = {
+  init: function () {
+    this.appendDummyInput("empty").appendField("List");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setTooltip("This object is not implemented yet.");
+    this.setHelpUrl("");
+    this.setColour(MColors.purple);
+  },
+};
+Blockly.common.defineBlocks({ list: list });
