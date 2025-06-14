@@ -4,9 +4,11 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import * as Blockly from 'blockly/core';
+import * as Blockly from "blockly/core";
 
-const storageKey = 'mainNITBWorkspace';
+const storageKey = "mainNITBWorkspace";
+
+export const strgkey = storageKey;
 
 /**
  * Saves the state of the workspace to browser's local storage.

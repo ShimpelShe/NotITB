@@ -31,11 +31,11 @@ code {
 }
 
 #generatedCode {
-  height: 50%;
+  height: 400px;
   background-color: white;
   padding: 10px;
-  border-radius: 10px;
-  border-style: solid double double solid;
+  border-radius: 5px;
+  border-style: solid;
   border-color: gray;
   scrollbar-color: gray transparent;
 }
@@ -45,7 +45,7 @@ code {
 }
 
 #saveButton {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   border: solid;
   border-style: none solid solid none;
   border-color: #00000020;
@@ -62,20 +62,20 @@ code {
 }
 
 #saveButton:hover {
-  background-color: #5CbF60;
+  background-color: #5cbf60;
   scale: 1;
   transition-duration: 100ms;
 }
 
 #saveButton:active {
-  background-color: #3C9F40;
+  background-color: #3c9f40;
   border-style: solid none none solid;
   scale: 0.98;
   transition-duration: 50ms;
 }
 
 #loadButton {
-  background-color: #377BD4;
+  background-color: #377bd4;
   border: solid;
   border-style: none solid solid none;
   border-color: #00000020;
@@ -92,13 +92,13 @@ code {
 }
 
 #loadButton:hover {
-  background-color: #478BE4;
+  background-color: #478be4;
   scale: 1;
   transition-duration: 100ms;
 }
 
 #loadButton:active {
-  background-color: #276BC4;
+  background-color: #276bc4;
   border-style: solid none none solid;
   scale: 0.98;
   transition-duration: 50ms;
@@ -159,6 +159,39 @@ code {
 
 #copyButton:active {
   background-color: #c1399f;
+  border-style: solid none none solid;
+  scale: 0.98;
+  transition-duration: 50ms;
+}
+
+#resetButton {
+  background-color: #d63636;
+  border: solid;
+  border-style: none solid solid none;
+  border-color: #00000020;
+  color: white;
+  padding: 4px 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 2px 1px;
+  cursor: pointer;
+  border-radius: 5px;
+  scale: 0.99;
+  width: 50%;
+  margin-left: 25%;
+  margin-top: 20px;
+  transition-duration: 100ms;
+}
+
+#resetButton:hover {
+  background-color: #e64646;
+  scale: 1;
+  transition-duration: 100ms;
+}
+
+#resetButton:active {
+  background-color: #c62626;
   border-style: solid none none solid;
   scale: 0.98;
   transition-duration: 50ms;

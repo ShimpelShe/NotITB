@@ -13,6 +13,10 @@ import { toolbox } from "./toolbox";
 import "./index.css";
 import "./renderers/NotITB";
 
+// for the reset button to work
+
+import { strgkey } from "./serialization";
+
 //import plugins
 
 import { shadowBlockConversionChangeListener } from "@blockly/shadow-block-converter";
@@ -106,13 +110,6 @@ ws.addChangeListener((e) => {
   runCode();
 });
 
-/*
-
-Note to self: Actual colors in nitgblocks.js
-Pointer Variables in both nitgen.js and nitgblocks.js
-
-*/
-
 // down here is the 10000th time AI has saved my lazy ### from coding things i don't know :3
 
 document.getElementById("saveButton").addEventListener("click", () => {
@@ -193,4 +190,12 @@ document.getElementById("copyButton").addEventListener("click", () => {
     .catch((err) => {
       console.error("Failed to copy code: ", err);
     });
+});
+
+document.getElementById("resetButton").addEventListener("click", () => {
+  let action = window.confirm("Are you sure you want to reset all the blocks?");
+  if (action == true) {
+    window.localStorage.setItem(strgkey, "");
+    window.location.reload();
+  }
 });
