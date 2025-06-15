@@ -195,7 +195,7 @@ document.getElementById("copyButton").addEventListener("click", () => {
 document.getElementById("resetButton").addEventListener("click", () => {
   let action = window.confirm("Are you sure you want to reset all the blocks?");
   if (action == true) {
-    window.localStorage.setItem(strgkey, "");
+    window.localStorage.setItem("mainNITBWorkspace", "");
     window.location.reload();
   }
 });
