@@ -23,6 +23,12 @@ Then open terminal, and start it by typing in `npm start`.
 
 If there's an uninstalled dependency.. Just search how to download it online dude, even a 8 year old could do it, not that he should though
 
+## Examples
+
+Here's a simple understandable example of NotITB being used:
+
+![A set of blocks containing code to apply commands in an interval](./Example1.PNG)
+
 ## There's Mirin Template
 
 I know i know, it's easier and more intuitive and stuff. And i have no excuse, i just didn't know about it when starting and.. well, yeah
